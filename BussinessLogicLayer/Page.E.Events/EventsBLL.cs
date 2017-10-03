@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BussinessLogicLayer.Page.E.Events
 {
-    class EventsBLL
+   public class EventsBLL
     {
+
     }
 }
