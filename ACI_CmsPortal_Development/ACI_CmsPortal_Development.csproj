@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9C9DD86-8206-41A2-8840-8EA91D46BD81}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ACI_CmsPortal_Development</RootNamespace>
+    <AssemblyName>ACI_CmsPortal_Development</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AllMasterPages\MasterAdmin.Master" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\lato-bold-webfont.eot" />
+    <Content Include="fonts\lato-bold-webfont.ttf" />
+    <Content Include="fonts\lato-bold-webfont.woff" />
+    <Content Include="fonts\lato-bold-webfont.woff2" />
+    <Content Include="fonts\lato-light-webfont.eot" />
+    <Content Include="fonts\lato-light-webfont.ttf" />
+    <Content Include="fonts\lato-light-webfont.woff" />
+    <Content Include="fonts\lato-light-webfont.woff2" />
+    <Content Include="fonts\lato-medium-webfont.eot" />
+    <Content Include="fonts\lato-medium-webfont.ttf" />
+    <Content Include="fonts\lato-medium-webfont.woff" />
+    <Content Include="fonts\lato-medium-webfont.woff2" />
+    <Content Include="fonts\lato-regular-webfont.eot" />
+    <Content Include="fonts\lato-regular-webfont.ttf" />
+    <Content Include="fonts\lato-regular-webfont.woff" />
+    <Content Include="fonts\lato-regular-webfont.woff2" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminHome.aspx" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\lato-bold-webfont.svg" />
+    <Content Include="fonts\lato-light-webfont.svg" />
+    <Content Include="fonts\lato-medium-webfont.svg" />
+    <Content Include="fonts\lato-regular-webfont.svg" />
+    <Content Include="images\333.jpg" />
+    <Content Include="images\444.jpg" />
+    <Content Include="images\555.jpg" />
+    <Content Include="images\aboutus1.jpg" />
+    <Content Include="images\ACImainpagepic.jpg" />
+    <Content Include="images\ACI_logo.png" />
+    <Content Include="images\admissionbig.jpg" />
+    <Content Include="images\banner1.jpg" />
+    <Content Include="images\banner2.jpg" />
+    <Content Include="images\banner3.png" />
+    <Content Include="images\Caro1.jpg" />
+    <Content Include="images\Caro2.jpg" />
+    <Content Include="images\Caro3.jpg" />
+    <Content Include="images\chef1.jpg" />
+    <Content Include="images\chef2.jpg" />
+    <Content Include="images\chef3.jpg" />
+    <Content Include="images\chef4.jpg" />
+    <Content Include="images\chef5.jpg" />
+    <Content Include="images\chef6.jpg" />
+    <Content Include="images\client1.png" />
+    <Content Include="images\client2.png" />
+    <Content Include="images\client3.png" />
+    <Content Include="images\client4.png" />
+    <Content Include="images\client5.png" />
+    <Content Include="images\client8.png" />
+    <Content Include="images\clockbg.jpg" />
+    <Content Include="images\clocklanding.jpg" />
+    <Content Include="images\Course1.PNG" />
+    <Content Include="images\Course2.PNG" />
+    <Content Include="images\Course3.PNG" />
+    <Content Include="images\Courses.jpg" />
+    <Content Include="images\event1.jpg" />
+    <Content Include="images\event2.jpg" />
+    <Content Include="images\event3.jpg" />
+    <Content Include="images\eventbig.jpg" />
+    <Content Include="images\eventdetailsbig.jpg" />
+    <Content Include="images\fa1.jpg" />
+    <Content Include="images\fa2.jpg" />
+    <Content Include="images\fa3.jpg" />
+    <Content Include="images\fa4.jpg" />
+    <Content Include="images\fa5.jpg" />
+    <Content Include="images\fa6.jpg" />
+    <Content Include="images\fac1.jpg" />
+    <Content Include="images\fac2.jpg" />
+    <Content Include="images\fac3.jpg" />
+    <Content Include="images\fac4.jpg" />
+    <Content Include="images\fac5.jpg" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\mediabig.jpg" />
+    <Content Include="images\P1.jpg" />
+    <Content Include="images\p10.png" />
+    <Content Include="images\p2.png" />
+    <Content Include="images\p3.jpg" />
+    <Content Include="images\p4.jpg" />
+    <Content Include="images\p5.png" />
+    <Content Include="images\p6.png" />
+    <Content Include="images\p7.jpg" />
+    <Content Include="images\p8.jpg" />
+    <Content Include="images\p9.jpg" />
+    <Content Include="images\photogallery1.jpg" />
+    <Content Include="images\photogallery2.jpg" />
+    <Content Include="images\reset.png" />
+    <Content Include="images\search.png" />
+    <Content Include="images\servicesbig.jpg" />
+    <Content Include="images\trainingbig.JPG" />
+    <Content Include="images\up1.jpg" />
+    <Content Include="images\up2.jpg" />
+    <Content Include="images\up3.jpg" />
+    <Content Include="images\up4.jpg" />
+    <Content Include="images\value2.jpeg" />
+    <Content Include="images\value3.jpeg" />
+    <Content Include="images\value4.jpeg" />
+    <Content Include="images\value5.jpeg" />
+    <Content Include="images\values1.jpeg" />
+    <Content Include="images\vision.jpg" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\html5shiv.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\pagenation.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllMasterPages\MasterAdmin.Master.cs">
+      <DependentUpon>MasterAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllMasterPages\MasterAdmin.Master.designer.cs">
+      <DependentUpon>MasterAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BussinessLogicLayer\BussinessLogicLayer.csproj">
+      <Project>{a91ad6b0-674a-4e67-bbb6-f25949d4f77b}</Project>
+      <Name>BussinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{cc171637-80d2-48b4-b4cc-89a17e215722}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AllPages\A.Programs\" />
+    <Folder Include="AllPages\B.Courses\" />
+    <Folder Include="AllPages\C.Jobs\" />
+    <Folder Include="AllPages\D.PhotoGallery\" />
+    <Folder Include="AllPages\E.Events\" />
+    <Folder Include="AllPages\F.HomePageSlider\" />
+    <Folder Include="AllPages\G.Recommendation\" />
+    <Folder Include="AllPages\H.Notification\" />
+    <Folder Include="AllPages\I.Users\" />
+    <Folder Include="AllPages\J.MyAccount\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50769</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50705/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
