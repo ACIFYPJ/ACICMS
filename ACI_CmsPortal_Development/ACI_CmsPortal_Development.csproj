@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AllMasterPages\MasterAdmin.Master" />
+    <Content Include="AllPages\E.Events\EventAdd.aspx" />
+    <Content Include="AllPages\E.Events\EventEdit.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -194,6 +196,20 @@
     <Compile Include="AllMasterPages\MasterAdmin.Master.designer.cs">
       <DependentUpon>MasterAdmin.Master</DependentUpon>
     </Compile>
+    <Compile Include="AllPages\E.Events\EventAdd.aspx.cs">
+      <DependentUpon>EventAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllPages\E.Events\EventAdd.aspx.designer.cs">
+      <DependentUpon>EventAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllPages\E.Events\EventEdit.aspx.cs">
+      <DependentUpon>EventEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllPages\E.Events\EventEdit.aspx.designer.cs">
+      <DependentUpon>EventEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -211,7 +227,6 @@
     <Folder Include="AllPages\B.Courses\" />
     <Folder Include="AllPages\C.Jobs\" />
     <Folder Include="AllPages\D.PhotoGallery\" />
-    <Folder Include="AllPages\E.Events\" />
     <Folder Include="AllPages\F.HomePageSlider\" />
     <Folder Include="AllPages\G.Recommendation\" />
     <Folder Include="AllPages\H.Notification\" />
