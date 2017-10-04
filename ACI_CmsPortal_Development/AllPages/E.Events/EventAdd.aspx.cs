@@ -16,8 +16,12 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-            String eventTitle = Label1.Text;
-            String location = Label2.Text;
+            string eventTitle = Label1.Text;
+            string location = Label2.Text;
+            string s = Label3.Text;
+            DateTime startDate = DateTime.ParseExact(s, "dd-MM-yyyy HH:mm tt", System.Globalization.CultureInfo.InvariantCulture);
+            DateTime endDate = DateTime.ParseExact(Label4.Text,"dd-MM-yyyy HH:mm",null);
+            Label13.Text = startDate.ToString();
 
         }
     }
