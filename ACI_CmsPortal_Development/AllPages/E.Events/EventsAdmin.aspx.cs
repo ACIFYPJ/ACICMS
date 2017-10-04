@@ -6,7 +6,8 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using DataAccessLayer;
+using DataAccessLayer.Page.E.Events;
 
 namespace ACI_CmsPortal_Development.AllPages.E.Events
 {
@@ -16,44 +17,25 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
         {
             if (!this.IsPostBack)
             {
+                EventsDAL DAL = new EventsDAL();
                 //Populating a DataTable from database.
-                DataTable dt = this.GetData();
-
-                //Building an HTML string.
-                StringBuilder html = new StringBuilder();
-
-                //Table start.
-                html.Append("<table table id='example' class='table table-striped table-bordered' cellspacing='0' width='100%'");
-
-                //Building the Header row.
-                html.Append("<tr>");
-                foreach (DataColumn column in dt.Columns)
-                {
-                    html.Append("<th>");
-                    html.Append(column.ColumnName);
-                    html.Append("</th>");
-                }
-                html.Append("</tr>");
-
-                //Building the Data rows.
-                foreach (DataRow row in dt.Rows)
-                {
-                    html.Append("<tr>");
-                    foreach (DataColumn column in dt.Columns)
-                    {
-                        html.Append("<td>");
-                        html.Append(row[column.ColumnName]);
-                        html.Append("</td>");
-                    }
-                    html.Append("</tr>");
-                }
-
-                //Table end.
-                html.Append("</table>");
-
-                //Append the HTML string to Placeholder.
-                PlaceHolder1.Controls.Add(new Literal { Text = html.ToString() });
+                DataTable dt = DAL.GetData();
+                EventRPT.DataSource = dt;
+                EventRPT.DataBind();
             }
+        }
+
+        protected void EventRPT_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "EditEvent")
+            {
+                Response.Redirect("EventEdit.aspx?EventID="+ e.CommandArgument.ToString());
+            }
+        }
+
+        protected void BtnEventNew_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EventAdd.aspx");
         }
       
     }

@@ -20,7 +20,7 @@ namespace DataAccessLayer.Page.E.Events
 
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT CustomerId, Name, Country FROM Customers"))
+                using (SqlCommand cmd = new SqlCommand("SELECT EventID, HomePageFeatured, EventTitle, Location, EventStart, EventEnd,RegistrationStatus,PublishStatus FROM aci_event"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {

@@ -13,12 +13,21 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
     public partial class EventsAdmin {
         
         /// <summary>
-        /// PlaceHolder1 control.
+        /// BtnEventNew control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button BtnEventNew;
+        
+        /// <summary>
+        /// EventRPT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater EventRPT;
     }
 }
