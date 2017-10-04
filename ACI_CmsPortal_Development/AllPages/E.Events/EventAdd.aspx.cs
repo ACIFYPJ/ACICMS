@@ -13,5 +13,12 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
         {
 
         }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            String eventTitle = Label1.Text;
+            String location = Label2.Text;
+
+        }
     }
 }
