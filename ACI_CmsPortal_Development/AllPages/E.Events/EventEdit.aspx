@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AllMasterPages/MasterAdmin.Master" AutoEventWireup="true" CodeBehind="EventEdit.aspx.cs" Inherits="ACI_CmsPortal_Development.AllPages.E.Events.EventEdit" %>
+<%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -15,7 +16,7 @@
         });
   </script>
     <div>
-        <h1>Add new Event</h1>
+        <h1>Edit Event</h1>
 
         <div>
             <asp:Label ID="Label1" runat="server" class="col-sm-2" Text="Event Title:"></asp:Label>
@@ -88,7 +89,7 @@
         </div>
         <br />
         <div>
-            <asp:Button ID="Button4" runat="server" Text="Save" OnClick="Button4_Click" />
+            <asp:Button ID="Button4" runat="server" Text="Save" />
         </div>
         <br />
 

@@ -5,18 +5,33 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <%--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
     <link rel="stylesheet" href="/resources/demos/style.css"/>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>--%>
+
+    <link rel="stylesheet" type="text/css" href="../../datetimepicker/jquery.datetimepicker.css" />
+<script src="../../datetimepicker/jquery.js"></script>
+<script src="../../datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
+    <%--<script>
         $(function () {
             $("#datepicker").datepicker();
         });
         $(function () {
             $("#datepicker2").datepicker();
         });
-  </script>
+        $(function () {
+            $("#datepicker3").datepicker();
+        });
+  </script>--%>
+    <script>
+        
+        $(document).ready(function () {
+            jQuery('.datetimepicker').datetimepicker({
+                format: 'd.m.Y H:i'
+            });
+        });
+    </script>
     <div>
         <h1>Add new Event</h1>
 
@@ -32,12 +47,12 @@
         <br />
         <div>
             <asp:Label ID="Label3" runat="server" class="col-sm-2" Text="Start Date"></asp:Label>
-            <input type="text" id="datepicker" /><asp:Button ID="Button2" runat="server" Text="..." />
+            <input class="datetimepicker" type="text" />
         </div>
         <br />
         <div>
             <asp:Label ID="Label4" runat="server" class="col-sm-2" Text="End Date"></asp:Label>
-            <input type="text" id="datepicker2" /><asp:Button ID="Button1" runat="server" Text="..." />
+            <input type="text" class="datetimepicker" />
         </div>
         <br />
         <div>
@@ -62,7 +77,7 @@
         <br />
         <div>
             <asp:Label ID="Label8" runat="server" class="col-sm-2" Text="Registration Deadline"></asp:Label>
-            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox><asp:Button ID="Button3" runat="server" Text="..." />
+            <input type="text" class="datetimepicker" />
         </div>
         <br />
         <div>
@@ -94,6 +109,6 @@
             <asp:Button ID="Button4" runat="server" Text="Save" OnClick="Button4_Click" />
         </div>
         <br />
-
+        <asp:Label ID="Label13" runat="server" Text="Label"></asp:Label>
     </div>
 </asp:Content>
