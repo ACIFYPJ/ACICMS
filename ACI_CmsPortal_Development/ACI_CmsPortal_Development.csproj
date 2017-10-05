@@ -567,6 +567,8 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Fakes Include="Fakes\CKEditor.fakes" />
+    <Content Include="images\Published.PNG" />
+    <Content Include="images\Unpublished.PNG" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\CHANGES.html" />
     <Content Include="Scripts\ckeditor\ckeditor.asp" />

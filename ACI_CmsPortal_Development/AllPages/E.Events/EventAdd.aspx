@@ -5,27 +5,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <%--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
-    <link rel="stylesheet" href="/resources/demos/style.css"/>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>--%>
-
-    <link rel="stylesheet" type="text/css" href="../../datetimepicker/jquery.datetimepicker.css" />
+  
+<link rel="stylesheet" type="text/css" href="../../datetimepicker/jquery.datetimepicker.css" />
 <script src="../../datetimepicker/jquery.js"></script>
 <script src="../../datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
-    <%--<script>
-        $(function () {
-            $("#datepicker").datepicker();
-        });
-        $(function () {
-            $("#datepicker2").datepicker();
-        });
-        $(function () {
-            $("#datepicker3").datepicker();
-        });
-  </script>--%>
     <script>
-        
         $(document).ready(function () {
             jQuery('.datetimepicker').datetimepicker({
                 format: 'd.m.Y H:i'

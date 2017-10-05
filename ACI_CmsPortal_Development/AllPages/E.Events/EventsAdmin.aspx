@@ -18,7 +18,6 @@
         </div>
     </div>
 
-  
     <div class="panel panel-default">
   <div class="panel-heading">
         <asp:Button ID="BtnEventNew" runat="server" CssClass="btn btn-primary" Text="New Event" OnClick="BtnEventNew_Click" />
@@ -44,40 +43,37 @@
                         <th scope="col" style="width: 100px">Status
                         </th>
                         <th scope="col" style="width: 100px"></th>
-
                     </tr>
                 </thead>
                 <tbody>
         </HeaderTemplate>
         <ItemTemplate>
-
             <tr>
                 <td>
-                    <asp:Label ID="lbFeatured" runat="server" Text='<%# Eval("HomePageFeatured") %>' />
+                    <asp:Label ID="lbFeatured" runat="server" Text='<%#((int)Eval("HomePageFeatured") == 1) ? "Yes" : "No" %>'/>
                 </td>
                 <td>
-                    <asp:Label ID="lbEventTitle" runat="server" Text='<%# Eval("EventTitle") %>' />
+                    <asp:Label ID="lbEventTitle" runat="server" Text='<%# Eval("EventTitle") %>'/>
                 </td>
                 <td>
-                    <asp:Label ID="lbLocation" runat="server" Text='<%# Eval("Location") %>' />
+                    <asp:Label ID="lbLocation" runat="server" Text='<%# Eval("Location") %>'/>
                 </td>
                 <td>
-                    <asp:Label ID="lbStartDate" runat="server" Text='<%# Eval("EventStart") %>' />
+                    <asp:Label ID="lbStartDate" runat="server" Text='<%# Eval("EventStart") %>'/>
                 </td>
                 <td>
                     <asp:Label ID="lbEndDate" runat="server" Text='<%# Eval("EventEnd") %>' />
                 </td>
                 <td>
-                    <asp:Label ID="lbRegistration" runat="server" Text='<%# Eval("RegistrationStatus") %>' />
+                    <asp:Label ID="lbRegistration" runat="server" Text='<%#((int)Eval("RegistrationStatus") == 1) ? "Yes" : "No" %>' />
                 </td>
                 <td>
-                    <asp:Label ID="lbStatus" runat="server" Text='<%# Eval("PublishStatus") %>' />
-                </td>
+                    <asp:Label ID="Label1" runat="server"  Text='<%#((int)Eval("PublishStatus") == 1) ? "Published" : "UnPublished" %>' /> 
+                    </td>
                 <td>
-                    <asp:Button ID="BtnEdit" CssClass="btn btn-primary" CommandName="EditEvent" CommandArgument='<%# Eval("EventID") %>' runat="server" Text="Edit" />
+                    <asp:Button ID="BtnEdit" CssClass="btn btn-primary" width="80px" CommandName="EditEvent" CommandArgument='<%# Eval("EventID") %>' runat="server" Text="Edit" />
                 </td>
             </tr>
-
         </ItemTemplate>
         <FooterTemplate>
             </tbody>
@@ -106,4 +102,8 @@
     </asp:Repeater>
     </div>
 </div>
+
+
+
+
 </asp:Content>
