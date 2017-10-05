@@ -28,7 +28,7 @@
         
         $(document).ready(function () {
             jQuery('.datetimepicker').datetimepicker({
-                format: 'd.m.Y H:i'
+                format: 'd/m/Y H:i'
             });
         });
     </script>
@@ -37,22 +37,22 @@
 
         <div>
             <asp:Label ID="Label1" runat="server" class="col-sm-2" Text="Event Title:"></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tbeventTitle" runat="server"></asp:TextBox>
         </div>
         <br />
         <div>
             <asp:Label ID="Label2" runat="server" class="col-sm-2" Text="Location:"></asp:Label>
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tblocation" runat="server"></asp:TextBox>
         </div>
         <br />
         <div>
             <asp:Label ID="Label3" runat="server" class="col-sm-2" Text="Start Date"></asp:Label>
-            <input class="datetimepicker" type="text" />
+            <input class="datetimepicker" type="text" id="startDate" runat="server"/>
         </div>
         <br />
         <div>
             <asp:Label ID="Label4" runat="server" class="col-sm-2" Text="End Date"></asp:Label>
-            <input type="text" class="datetimepicker" />
+            <input type="text" class="datetimepicker" id="endDate" runat="server" />
         </div>
         <br />
         <div>
@@ -77,7 +77,7 @@
         <br />
         <div>
             <asp:Label ID="Label8" runat="server" class="col-sm-2" Text="Registration Deadline"></asp:Label>
-            <input type="text" class="datetimepicker" />
+            <input type="text" class="datetimepicker" runat="server" id="rDeadline"/>
         </div>
         <br />
         <div>
@@ -92,7 +92,7 @@
         <br />
         <div>
             <asp:Label ID="Label11" runat="server" class="col-sm-2" Text="Feature Order"></asp:Label>
-            <input type="number" min="0" max="20" step="1" />
+            <input type="number" id="featureorder" min="1" step="1" runat="server"/>
         </div>
         <br />
 
