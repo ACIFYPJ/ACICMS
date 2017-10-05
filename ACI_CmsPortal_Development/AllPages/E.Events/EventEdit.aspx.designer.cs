@@ -22,13 +22,13 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// TextBox1 control.
+        /// tbeventTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox tbeventTitle;
         
         /// <summary>
         /// Label2 control.
@@ -40,13 +40,13 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// TextBox2 control.
+        /// tblocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox tblocation;
         
         /// <summary>
         /// Label3 control.
@@ -58,13 +58,13 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Button2 control.
+        /// sDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText sDate;
         
         /// <summary>
         /// Label4 control.
@@ -76,13 +76,13 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// Button1 control.
+        /// eDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText eDate;
         
         /// <summary>
         /// Label5 control.
@@ -121,13 +121,13 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// CheckBox1 control.
+        /// enableForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.CheckBox enableForm;
         
         /// <summary>
         /// Label8 control.
@@ -139,22 +139,13 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
-        /// TextBox5 control.
+        /// rDeadline control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
-        
-        /// <summary>
-        /// Button3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText rDeadline;
         
         /// <summary>
         /// Label9 control.
@@ -184,13 +175,13 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         protected global::System.Web.UI.WebControls.Label Label10;
         
         /// <summary>
-        /// CheckBox2 control.
+        /// feature control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
+        protected global::System.Web.UI.WebControls.CheckBox feature;
         
         /// <summary>
         /// Label11 control.
@@ -202,6 +193,15 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         protected global::System.Web.UI.WebControls.Label Label11;
         
         /// <summary>
+        /// fOrder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fOrder;
+        
+        /// <summary>
         /// Label12 control.
         /// </summary>
         /// <remarks>
@@ -211,13 +211,13 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         protected global::System.Web.UI.WebControls.Label Label12;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// pStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList pStatus;
         
         /// <summary>
         /// Button4 control.
@@ -227,5 +227,14 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button4;
+        
+        /// <summary>
+        /// Label13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label13;
     }
 }
