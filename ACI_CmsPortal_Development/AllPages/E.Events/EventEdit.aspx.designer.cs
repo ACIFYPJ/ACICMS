@@ -58,13 +58,13 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// sDate control.
+        /// startDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText sDate;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText startDate;
         
         /// <summary>
         /// Label4 control.
@@ -76,13 +76,13 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// eDate control.
+        /// endDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText eDate;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText endDate;
         
         /// <summary>
         /// Label5 control.
@@ -193,13 +193,13 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         protected global::System.Web.UI.WebControls.Label Label11;
         
         /// <summary>
-        /// fOrder control.
+        /// featureorder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fOrder;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl featureorder;
         
         /// <summary>
         /// Label12 control.

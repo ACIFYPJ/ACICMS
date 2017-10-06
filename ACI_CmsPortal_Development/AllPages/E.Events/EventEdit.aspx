@@ -41,12 +41,12 @@
         <br />
         <div>
             <asp:Label ID="Label3" runat="server" class="col-sm-2" Text="Start Date"></asp:Label>
-            <input type="text" class="datetimepicker" runat="server" id ="sDate"/>
+            <input type="text" class="datetimepicker" runat="server" id ="startDate"/>
         </div>
         <br />
         <div>
             <asp:Label ID="Label4" runat="server" class="col-sm-2" Text="End Date"></asp:Label>
-            <input type="text" class="datetimepicker" runat="server" id="eDate"/>
+            <input type="text" class="datetimepicker" runat="server" id="endDate"/>
         </div>
         <br />
         <div>
@@ -86,7 +86,7 @@
         <br />
         <div>
             <asp:Label ID="Label11" runat="server" class="col-sm-2" Text="Feature Order"></asp:Label>
-            <input type="number" min="0" max="20" step="1" id ="fOrder" runat="server" />
+            <input type="number" min="0" max="20" step="1" id ="featureorder" runat="server" />
         </div>
         <br />
 
@@ -100,9 +100,9 @@
         </div>
         <br />
         <div>
-            <asp:Button ID="Button4" runat="server" Text="Save" />
+            <asp:Button ID="Button4" runat="server" Text="Save" OnClick="Button4_Click" />
+            <asp:Label ID="Label13" runat="server" Text="Label"></asp:Label>
         </div>
         <br />
-        <asp:Label ID="Label13" runat="server"></asp:Label>
     </div>
 </asp:Content>

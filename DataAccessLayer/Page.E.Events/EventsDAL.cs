@@ -42,6 +42,32 @@ namespace DataAccessLayer.Page.E.Events
                 
             }
         }
+
+        public void editEvent(string eventTitle, string description, string photoPath, string location, DateTime eventStart, DateTime eventEnd, int regStatus, DateTime deadline, int homeFeatured, int fOrder, int pID, string ps, int pStatus, int createuserid, DateTime createdate, int eventID)
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE aci_event SET EventTitle = @eventTitle, Description=@description, PhotoPath =@photoPath, Location =@location, EventStart=@eventStart, EventEnd=@eventEnd, RegistrationStatus=@regStatus, RegistrationEnd =@regEnd, HomePageFeatured =@homeFeatured, FeaturedOrder=@featureOrder, PhotoAlbumID =@photoalbumid, PageSlug=@pageslug, PublishStatus =@publishStatus, CreateUserID=@createUserID, CreateDate=@createDate WHERE EventID = @eventID", con);
+                cmd.Parameters.AddWithValue("@eventTitle", eventTitle);
+                cmd.Parameters.AddWithValue("@description", description);
+                cmd.Parameters.AddWithValue("@photoPath", photoPath);
+                cmd.Parameters.AddWithValue("@location", location);
+                cmd.Parameters.AddWithValue("@eventStart", eventStart);
+                cmd.Parameters.AddWithValue("@eventEnd", eventEnd);
+                cmd.Parameters.AddWithValue("@regStatus", regStatus);
+                cmd.Parameters.AddWithValue("@regEnd", deadline);
+                cmd.Parameters.AddWithValue("@homeFeatured", homeFeatured);
+                cmd.Parameters.AddWithValue("@featureOrder", fOrder);
+                cmd.Parameters.AddWithValue("@photoalbumid", pID);
+                cmd.Parameters.AddWithValue("@pageslug", ps);
+                cmd.Parameters.AddWithValue("@publishStatus", pStatus);
+                cmd.Parameters.AddWithValue("@createUserID", createuserid);
+                cmd.Parameters.AddWithValue("@createDate", createdate);
+                cmd.Parameters.AddWithValue("@eventID", eventID);
+                cmd.ExecuteNonQuery();
+            }
+        }
         public int getCount()
         {
             using (SqlConnection con = new SqlConnection(constr))
@@ -110,36 +136,56 @@ namespace DataAccessLayer.Page.E.Events
         {
             using (SqlConnection con = new SqlConnection(constr))
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT EventStart FROM aci_event WHERE EventID = @eventID", con);
-                cmd.Parameters.AddWithValue("@eventID", eventID);
-                DateTime sd = (DateTime)cmd.ExecuteScalar();
-                string sDate = sd.ToString();
-                return sDate;
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT EventStart FROM aci_event WHERE EventID = @eventID", con);
+                    cmd.Parameters.AddWithValue("@eventID", eventID);
+                    DateTime sd = (DateTime)cmd.ExecuteScalar();
+                    string sDate = sd.ToString("dd/MM/yyyy HH:mm");
+                    return sDate;
+                }
+                catch (Exception)
+                {
+                    return "";
+                }
             }
         }
         public string geteDate(int eventID)
         {
             using (SqlConnection con = new SqlConnection(constr))
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT EventEnd FROM aci_event WHERE EventID = @eventID", con);
-                cmd.Parameters.AddWithValue("@eventID", eventID);
-                DateTime ed = (DateTime)cmd.ExecuteScalar();
-                string eDate = ed.ToString();
-                return eDate;
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT (EventEnd) FROM aci_event WHERE EventID = @eventID", con);
+                    cmd.Parameters.AddWithValue("@eventID", eventID);
+                    DateTime ed = (DateTime)cmd.ExecuteScalar();
+                    string eDate = ed.ToString("dd/MM/yyyy HH:mm");
+                    return eDate;
+                }
+                catch(Exception){
+                    return "";
+                }
             }
         }
         public string getDeadline(int eventID)
         {
             using (SqlConnection con = new SqlConnection(constr))
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT RegistrationEnd FROM aci_event WHERE EventID = @eventID", con);
-                cmd.Parameters.AddWithValue("@eventID", eventID);
-                DateTime d = (DateTime)cmd.ExecuteScalar();
-                string deadline = d.ToString();
-                return deadline;
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT RegistrationEnd FROM aci_event WHERE EventID = @eventID", con);
+                    cmd.Parameters.AddWithValue("@eventID", eventID);
+                    DateTime d = (DateTime)cmd.ExecuteScalar();
+                    string deadline = d.ToString("dd/MM/yyyy HH:mm");
+                    return deadline;
+                }
+                catch (Exception)
+                {
+                    return "";
+                }
             }
         }
         public int getRegStatus(int eventID)
