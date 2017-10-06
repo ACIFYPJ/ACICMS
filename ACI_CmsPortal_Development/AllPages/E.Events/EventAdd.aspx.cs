@@ -47,9 +47,12 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
             DateTime deadline = DateTime.ParseExact(rDeadline.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
             
             //int LastModifiedUserID = 1;
+           
             //DateTime LastModifiedDate = DateTime.Now;
+            string filename = myImg.Value;
             DAL.addEvent(eventTitle, description, photoPath, location, sDate, eDate, regStatus, deadline, homeFeatured, fOrder, photoalbumid, pageslug, publishStatus, createUserID, createDate);
             Server.Transfer("EventsAdmin.aspx", true);
+
         }
         public int checkbox(CheckBox c)
         {
