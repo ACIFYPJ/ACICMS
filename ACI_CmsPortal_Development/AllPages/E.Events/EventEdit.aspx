@@ -32,6 +32,7 @@
         <div>
             <asp:Label ID="Label1" runat="server" class="col-sm-2" Text="Event Title:"></asp:Label>
             <asp:TextBox ID="tbeventTitle" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="TextBoxValidator" ForeColor="Red" ControlToValidate="tbeventTitle" runat="server" ErrorMessage="Event title required!"></asp:RequiredFieldValidator>
         </div>
         <br />
         <div>
@@ -42,11 +43,13 @@
         <div>
             <asp:Label ID="Label3" runat="server" class="col-sm-2" Text="Start Date"></asp:Label>
             <input type="text" class="datetimepicker" runat="server" id ="startDate"/>
+             <asp:RequiredFieldValidator ID="StartDateValidator" ControlToValidate="startDate" ForeColor="Red" runat="server" ErrorMessage="Start date and time required!" EnableClientScript="True"></asp:RequiredFieldValidator>
         </div>
         <br />
         <div>
             <asp:Label ID="Label4" runat="server" class="col-sm-2" Text="End Date"></asp:Label>
             <input type="text" class="datetimepicker" runat="server" id="endDate"/>
+            <asp:RequiredFieldValidator ID="EndDateValidator" ControlToValidate="endDate" runat="server" ForeColor="Red" ErrorMessage="End date and time required!"></asp:RequiredFieldValidator>
         </div>
         <br />
         <div>
@@ -56,6 +59,7 @@
         <br />
         <div>
             <asp:Label ID="Label6" runat="server" class="col-sm-2" Text="Description"></asp:Label>
+            <asp:RequiredFieldValidator ForeColor="Red" ID="DescriptionValidator" ControlToValidate="CKEditor1" runat="server" ErrorMessage="Description required!"></asp:RequiredFieldValidator>
         </div>
         <br />
         <div>

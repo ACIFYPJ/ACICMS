@@ -31,6 +31,15 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         protected global::System.Web.UI.WebControls.TextBox tbeventTitle;
         
         /// <summary>
+        /// TextBoxValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator TextBoxValidator;
+        
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         protected global::System.Web.UI.HtmlControls.HtmlInputText startDate;
         
         /// <summary>
+        /// StartDateValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator StartDateValidator;
+        
+        /// <summary>
         /// Label4 control.
         /// </summary>
         /// <remarks>
@@ -85,6 +103,15 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         protected global::System.Web.UI.HtmlControls.HtmlInputText endDate;
         
         /// <summary>
+        /// EndDateValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator EndDateValidator;
+        
+        /// <summary>
         /// Label5 control.
         /// </summary>
         /// <remarks>
@@ -101,6 +128,15 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label6;
+        
+        /// <summary>
+        /// DescriptionValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator DescriptionValidator;
         
         /// <summary>
         /// CKEditor1 control.

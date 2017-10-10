@@ -22,5 +22,16 @@ namespace BussinessLogicLayer.Page.E.Events
                return 3;
        }
 
+       public int fo(string input)
+       {
+           if (string.IsNullOrWhiteSpace(input))
+           {
+               return 1;
+           }
+           else
+           {
+               return Int32.Parse(input);
+           }
+       }
     }
 }

@@ -19,41 +19,52 @@
     <div>
         <h1>Add new Event</h1>
 
+        
         <div>
             <asp:Label ID="Label1" runat="server" class="col-sm-2" Text="Event Title:"></asp:Label>
             <asp:TextBox ID="tbeventTitle" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="TextBoxValidator" ForeColor="red" ControlToValidate="tbeventTitle" runat="server" ErrorMessage="Event Title required!"></asp:RequiredFieldValidator>
+            
         </div>
         <br />
+        
         <div>
             <asp:Label ID="Label2" runat="server" class="col-sm-2" Text="Location:"></asp:Label>
             <asp:TextBox ID="tblocation" runat="server"></asp:TextBox>
         </div>
         <br />
+        
         <div>
             <asp:Label ID="Label3" runat="server" class="col-sm-2" Text="Start Date"></asp:Label>
             <input class="datetimepicker" type="text" id="startDate" runat="server"/>
+            <asp:RequiredFieldValidator ID="StartDateValidator" ControlToValidate="startDate" ForeColor="Red" runat="server" ErrorMessage="Start date and time required!" EnableClientScript="True"></asp:RequiredFieldValidator>
         </div>
         <br />
         <div>
             <asp:Label ID="Label4" runat="server" class="col-sm-2" Text="End Date"></asp:Label>
             <input type="text" class="datetimepicker" id="endDate" runat="server" />
+            <asp:RequiredFieldValidator ID="EndDateValidator" ControlToValidate="endDate" runat="server" ForeColor="Red" ErrorMessage="End date and time required!"></asp:RequiredFieldValidator>
         </div>
         <br />
         <div>
+            
             <asp:Label ID="Label5" runat="server" class="col-sm-2" Text="Featured Photo"></asp:Label>
-            <input type="file" id="myImg" runat="server"/>
+            <asp:FileUpload ID="imgUpload" runat="server" />
+            <%--<input type="file" id="myImg" runat="server"/>--%>
             <br />
-            <asp:FileUpload ID="imageUpload" runat="server" />
+            <asp:Image ID="imgResult" runat="server" />
         </div>
         <br />
         <div>
             <asp:Label ID="Label6" runat="server" class="col-sm-2" Text="Description"></asp:Label>
+            <asp:RequiredFieldValidator ForeColor="Red" ID="DescriptionValidator" ControlToValidate="CKEditor1" runat="server" ErrorMessage="Description required!"></asp:RequiredFieldValidator>
         </div>
         <br />
+        
         <div>
-
             <CKEditor:CKEditorControl ID="CKEditor1" BasePath="/ckeditor/" runat="server"></CKEditor:CKEditorControl>
-        </div>
+       
+             </div>
         <br />
 
         <div>

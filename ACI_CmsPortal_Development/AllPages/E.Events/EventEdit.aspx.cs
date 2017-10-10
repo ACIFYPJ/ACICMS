@@ -61,27 +61,32 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
         }
 
         protected void Button4_Click(object sender, EventArgs e)
-        { 
-            int EventID = int.Parse(Request.QueryString["EventID"]);
-            string eventTitle = tbeventTitle.Text;
-            string description = CKEditor1.Text;
-            string photoPath = "";
-            string location = tblocation.Text;
-            DateTime sDate = DateTime.ParseExact(startDate.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
-            DateTime eDate = DateTime.ParseExact(endDate.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
-            int regStatus = checkbox(enableForm);
-            int homeFeatured = checkbox(feature);
-            int fOrder = Int32.Parse(featureorder.Value);
-            int photoalbumid = 1;
-            string pageslug = "asd";
-            string status = pStatus.Text;
-            int publishStatus = BLL.pubStatus(status);
-            int createUserID = 1;
-            DateTime createDate = DateTime.Now;
-            Label13.Text = startDate.Value;
-            DateTime deadline = DateTime.ParseExact(rDeadline.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
-            DAL.editEvent(eventTitle, description, photoPath, location, sDate, eDate, regStatus, deadline, homeFeatured, fOrder, photoalbumid, pageslug, publishStatus, createUserID, createDate, EventID );
-            Server.Transfer("EventsAdmin.aspx", true);
+        {
+            if (TextBoxValidator.IsValid && StartDateValidator.IsValid && DescriptionValidator.IsValid && EndDateValidator.IsValid)
+            {
+                string eventTitle = tbeventTitle.Text;
+                string description = CKEditor1.Text;
+                string photoPath = "";
+                string location = tblocation.Text;
+                DateTime sDate = DateTime.ParseExact(startDate.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+                DateTime eDate = DateTime.ParseExact(endDate.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+
+                int regStatus = checkbox(enableForm);
+                int homeFeatured = checkbox(feature);
+                int fOrder = BLL.fo(featureorder.Value);
+                int photoalbumid = 1;
+                string pageslug = "asd";
+                string status = pStatus.Text;
+                int publishStatus = BLL.pubStatus(status);
+                int createUserID = 1;
+                Nullable<DateTime> deadline = null;
+                DateTime createDate = DateTime.Now;
+                //DateTime deadline = DateTime.ParseExact(rDeadline.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+                //int LastModifiedUserID = 1;
+                //DateTime LastModifiedDate = DateTime.Now;
+                DAL.addEvent(eventTitle, description, photoPath, location, sDate, eDate, regStatus, deadline, homeFeatured, fOrder, photoalbumid, pageslug, publishStatus, createUserID, createDate);
+                Response.Redirect("EventsAdmin.aspx");
+            }
         }
         public int checkbox(CheckBox c)
         {
