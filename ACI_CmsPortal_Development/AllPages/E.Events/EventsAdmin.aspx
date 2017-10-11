@@ -12,6 +12,9 @@
             $('#event').DataTable();
         });
     </script>
+
+
+
     <div class="row">
         <div class="col-sm-12">
            <h1>Manage Events</h1> 
@@ -21,6 +24,7 @@
     <div class="panel panel-default">
   <div class="panel-heading">
         <asp:Button ID="BtnEventNew" runat="server" CssClass="btn btn-primary" Text="New Event" OnClick="BtnEventNew_Click" />
+        <asp:Button ID="btnViewApplicants" runat="server" CssClass="btn btn-info" Text="View Applicants" OnClick="btnViewApplicants_Click"  />
   </div>
   <div class="panel-body">
     <asp:Repeater ID="EventRPT" runat="server" OnItemCommand="EventRPT_ItemCommand">

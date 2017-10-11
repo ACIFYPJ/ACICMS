@@ -22,6 +22,15 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events {
         protected global::System.Web.UI.WebControls.Button BtnEventNew;
         
         /// <summary>
+        /// btnViewApplicants control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnViewApplicants;
+        
+        /// <summary>
         /// EventRPT control.
         /// </summary>
         /// <remarks>

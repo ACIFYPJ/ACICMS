@@ -51,9 +51,8 @@
       <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.12.1\lib\net45\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ckeditor_aspnet_3.6.6.2 (1)\bin\Release\CKEditor.NET.dll</HintPath>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\ckeditor_aspnet_3.6.6.2 (1)\bin\bin\Release\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
