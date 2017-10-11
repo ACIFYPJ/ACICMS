@@ -106,6 +106,48 @@ namespace DataAccessLayer.Page.E.Events
                 }
             }
         }
+
+        public DataTable GetApplicantsData()
+        {
+
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT RegistrationID, Title,Name,DateOfBirth,Handphone,Email,NRIC FROM aci_eventregistration"))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
+
+        public DataTable GetSpecificApplicantsData(int ID)
+        {
+
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM aci_eventregistration WHERE RegistrationID=" + ID))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
         
         public string getEventTitle(int eventID)
         {

@@ -37,6 +37,11 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
         {
             Response.Redirect("EventAdd.aspx");
         }
+
+        protected void btnViewApplicants_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EventApplicants.aspx");
+        }
       
     }
 }
