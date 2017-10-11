@@ -115,6 +115,7 @@
   <ItemGroup>
     <Content Include="AllMasterPages\MasterAdmin.Master" />
     <Content Include="AllPages\E.Events\EventAdd.aspx" />
+    <Content Include="AllPages\E.Events\EventApplicants.aspx" />
     <Content Include="AllPages\E.Events\EventEdit.aspx" />
     <Content Include="AllPages\E.Events\EventsAdmin.aspx" />
     <Content Include="ckeditor\adapters\jquery.js" />
@@ -1064,6 +1065,13 @@
     </Compile>
     <Compile Include="AllPages\E.Events\EventAdd.aspx.designer.cs">
       <DependentUpon>EventAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllPages\E.Events\EventApplicants.aspx.cs">
+      <DependentUpon>EventApplicants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllPages\E.Events\EventApplicants.aspx.designer.cs">
+      <DependentUpon>EventApplicants.aspx</DependentUpon>
     </Compile>
     <Compile Include="AllPages\E.Events\EventEdit.aspx.cs">
       <DependentUpon>EventEdit.aspx</DependentUpon>

@@ -9,7 +9,7 @@
 
     <script>
         $(document).ready(function () {
-            $('#example').DataTable();
+            $('#event').DataTable();
         });
     </script>
     <div class="row">
@@ -25,7 +25,7 @@
   <div class="panel-body">
     <asp:Repeater ID="EventRPT" runat="server" OnItemCommand="EventRPT_ItemCommand">
         <HeaderTemplate>
-            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <table id="event" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                     <tr>
                         <th scope="col" style="width: 80px">Featured
