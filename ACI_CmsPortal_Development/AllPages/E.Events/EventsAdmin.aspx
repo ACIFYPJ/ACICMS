@@ -25,7 +25,9 @@
   <div class="panel-heading">
         <asp:Button ID="BtnEventNew" runat="server" CssClass="btn btn-primary" Text="New Event" OnClick="BtnEventNew_Click" />
         <asp:Button ID="BtnViewApplicants" runat="server" CssClass="btn btn-info" Text="View Applicants" OnClick="btnViewApplicants_Click"  />
-  </div>
+  <asp:Button ID="BtnRefresh" runat="server" CssClass="btn btn-default" Text="Refresh" OnClick="BtnRefresh_Click"   />
+ 
+       </div>
   <div class="panel-body">
     <asp:Repeater ID="EventRPT" runat="server" OnItemCommand="EventRpt_ItemCommand">
         <HeaderTemplate>
@@ -76,7 +78,9 @@
                     </td>
                 <td>
                     <asp:Button ID="BtnEdit" CssClass="btn btn-primary" width="80px" CommandName="EditEvent" CommandArgument='<%# Eval("EventID") %>' runat="server" Text="Edit" />
-                </td>
+               <asp:Button ID="btnDelete" CssClass="btn btn-danger" Width="80px" CommandName="DeleteEvent" CommandArgument='<%# Eval("EventID") %>' runat="server" Text="Delete" />
+                    
+                     </td>
             </tr>
         </ItemTemplate>
         <FooterTemplate>

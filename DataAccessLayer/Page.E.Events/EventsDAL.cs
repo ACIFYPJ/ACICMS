@@ -20,36 +20,47 @@ namespace DataAccessLayer.Page.E.Events
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("INSERT INTO aci_event(EventTitle, Description, PhotoPath, Location, EventStart, EventEnd, RegistrationStatus, RegistrationEnd, HomePageFeatured, FeaturedOrder, PhotoAlbumID, PageSlug, PublishStatus, CreateUserID, CreateDate) VALUES (@eventTitle, @description, @photoPath, @location, @eventStart, @eventEnd, @regStatus, @regEnd, @homeFeatured, @featureOrder, @photoalbumid, @pageslug, @publishStatus, @createUserID, @createDate)", con);
-                
-                    cmd.Parameters.AddWithValue("@eventTitle", eventTitle);
-                    cmd.Parameters.AddWithValue("@description", description);
-                    cmd.Parameters.AddWithValue("@photoPath", photoPath);
-                    cmd.Parameters.AddWithValue("@location", location);
-                    cmd.Parameters.AddWithValue("@eventStart", eventStart);
-                    cmd.Parameters.AddWithValue("@eventEnd", eventEnd);
-                    cmd.Parameters.AddWithValue("@regStatus", regStatus);
-                    SqlParameter d = cmd.Parameters.AddWithValue("@regEnd", deadline);
-                    cmd.Parameters.AddWithValue("@homeFeatured", homeFeatured);
-                    SqlParameter f = cmd.Parameters.AddWithValue("@featureOrder", fOrder);
-                    cmd.Parameters.AddWithValue("@photoalbumid", pID);
-                    cmd.Parameters.AddWithValue("@pageslug", ps);
-                    cmd.Parameters.AddWithValue("@publishStatus", pStatus);
-                    cmd.Parameters.AddWithValue("@createUserID", createuserid);
-                    cmd.Parameters.AddWithValue("@createDate", createdate);
-                     
-                    if (deadline == null)
-                    {
-                        d.Value = DBNull.Value;
-                    }
-                    if (fOrder == null)
-                    {
-                        f.Value = DBNull.Value;
-                    }
-                    cmd.ExecuteNonQuery();
-                
+
+                cmd.Parameters.AddWithValue("@eventTitle", eventTitle);
+                cmd.Parameters.AddWithValue("@description", description);
+                cmd.Parameters.AddWithValue("@photoPath", photoPath);
+                cmd.Parameters.AddWithValue("@location", location);
+                cmd.Parameters.AddWithValue("@eventStart", eventStart);
+                cmd.Parameters.AddWithValue("@eventEnd", eventEnd);
+                cmd.Parameters.AddWithValue("@regStatus", regStatus);
+                SqlParameter d = cmd.Parameters.AddWithValue("@regEnd", deadline);
+                cmd.Parameters.AddWithValue("@homeFeatured", homeFeatured);
+                SqlParameter f = cmd.Parameters.AddWithValue("@featureOrder", fOrder);
+                cmd.Parameters.AddWithValue("@photoalbumid", pID);
+                cmd.Parameters.AddWithValue("@pageslug", ps);
+                cmd.Parameters.AddWithValue("@publishStatus", pStatus);
+                cmd.Parameters.AddWithValue("@createUserID", createuserid);
+                cmd.Parameters.AddWithValue("@createDate", createdate);
+
+                if (deadline == null)
+                {
+                    d.Value = DBNull.Value;
+                }
+                if (fOrder == null)
+                {
+                    f.Value = DBNull.Value;
+                }
+                cmd.ExecuteNonQuery();
+
             }
         }
 
+
+        public void deleteEvent(int eventID)
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("DELETE aci_event WHERE EventID=@eventID", con);
+                cmd.Parameters.AddWithValue("@eventID", eventID);
+                cmd.ExecuteNonQuery();
+            }
+        }
         public void editEvent(string eventTitle, string description, string photoPath, string location, DateTime eventStart, DateTime eventEnd, int regStatus, Nullable<DateTime> deadline, int homeFeatured, int fOrder, int pID, string ps, int pStatus, int createuserid, DateTime createdate, int eventID)
         {
             using (SqlConnection con = new SqlConnection(constr))
@@ -82,11 +93,11 @@ namespace DataAccessLayer.Page.E.Events
                     f.Value = DBNull.Value;
                 }
                 cmd.ExecuteNonQuery();
-                
+
             }
         }
 
-        
+
         public DataTable GetData()
         {
 
@@ -149,15 +160,15 @@ namespace DataAccessLayer.Page.E.Events
                 }
             }
         }
-        
+
         public string getEventTitle(int eventID)
         {
             using (SqlConnection con = new SqlConnection(constr))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT EventTitle FROM aci_event WHERE EventID = @eventID",con);
+                SqlCommand cmd = new SqlCommand("SELECT EventTitle FROM aci_event WHERE EventID = @eventID", con);
                 cmd.Parameters.AddWithValue("@eventID", eventID);
-                string EventTitle =cmd.ExecuteScalar() as string;
+                string EventTitle = cmd.ExecuteScalar() as string;
                 return EventTitle;
             }
         }
@@ -215,7 +226,8 @@ namespace DataAccessLayer.Page.E.Events
                     string eDate = ed.ToString("dd/MM/yyyy HH:mm");
                     return eDate;
                 }
-                catch(Exception){
+                catch (Exception)
+                {
                     return "";
                 }
             }

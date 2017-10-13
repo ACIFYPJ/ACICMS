@@ -27,6 +27,8 @@
                     <table id="event" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                             <tr>
+                                <th scope="col" style="width: 200px">Event Title
+                                </th>
                                 <th scope="col" style="width: 200px">Name
                                 </th>
                                 <th scope="col" style="width: 250px">Handphone
@@ -45,6 +47,9 @@
                 <ItemTemplate>
                     <tr>
                         <td>
+                            <asp:Label ID="lbTitle" runat="server" Text='<%# Eval("Title") %>' />
+                        </td>
+                        <td>
                             <asp:Label ID="lbName" runat="server" Text='<%# Eval("Name") %>' />
                         </td>
                         <td>
@@ -61,13 +66,16 @@
                         </td>
                         <td>
                             <asp:Button ID="BtnView" CssClass="btn btn-primary" Width="80px" CommandName="ViewApplicant" CommandArgument='<%# Eval("RegistrationID") %>' runat="server" Text="View" />
-                        </td>
+                            
+                              </td>
                     </tr>
                 </ItemTemplate>
                 <FooterTemplate>
                     </tbody>
            <tfoot>
                <tr>
+                   <th scope="col" style="width: 200px">Event Title
+                   </th>
                    <th scope="col" style="width: 200px">Name
                    </th>
                    <th scope="col" style="width: 250px">Handphone
@@ -123,6 +131,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
                 </div>
             </div>
         </div>

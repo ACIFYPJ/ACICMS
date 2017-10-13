@@ -17,12 +17,17 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
         {
             if (!this.IsPostBack)
             {
-                EventsDAL DAL = new EventsDAL();
-                //Populating a DataTable from database.
-                DataTable dt = DAL.GetData();
-                EventRPT.DataSource = dt;
-                EventRPT.DataBind();
-            }
+                bindtabledata();
+            }        
+        }
+
+        private void bindtabledata()
+        {
+            EventsDAL DAL = new EventsDAL();
+            //Populating a DataTable from database.
+            DataTable dt = DAL.GetData();
+            EventRPT.DataSource = dt;
+            EventRPT.DataBind();
         }
 
         protected void EventRpt_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -30,6 +35,13 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
             if (e.CommandName == "EditEvent")
             {
                 Response.Redirect("EventEdit.aspx?EventID="+ e.CommandArgument.ToString());
+            }
+            else if(e.CommandName == "DeleteEvent")
+            {
+                
+                EventsDAL DAL = new EventsDAL();
+                DAL.deleteEvent(int.Parse(e.CommandArgument.ToString()));
+                bindtabledata();
             }
         }
 
@@ -41,6 +53,11 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
         protected void btnViewApplicants_Click(object sender, EventArgs e)
         {
             Response.Redirect("EventApplicants.aspx");
+        }
+
+        protected void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            bindtabledata();
         }
 
       
