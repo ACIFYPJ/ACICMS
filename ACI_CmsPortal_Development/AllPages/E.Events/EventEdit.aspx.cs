@@ -80,8 +80,16 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
                 string status = pStatus.Text;
                 int publishStatus = BLL.pubStatus(status);
                 int createUserID = 1;
-                Nullable<DateTime> deadline = DateTime.ParseExact(rDeadline.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
-                DateTime createDate = DateTime.Now;
+                Nullable<DateTime> deadline;
+                if (string.IsNullOrWhiteSpace(rDeadline.Value))
+                {
+                    deadline = null;
+                }
+                else
+                    deadline = DateTime.ParseExact(rDeadline.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+               
+
+                 DateTime createDate = DateTime.Now;
                 //DateTime deadline = DateTime.ParseExact(rDeadline.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
                 //int LastModifiedUserID = 1;
                 //DateTime LastModifiedDate = DateTime.Now;
