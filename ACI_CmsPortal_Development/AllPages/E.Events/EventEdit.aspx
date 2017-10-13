@@ -105,7 +105,6 @@
         <br />
         <div>
             <asp:Button ID="Button4" runat="server" Text="Save" OnClick="Button4_Click" />
-            <asp:Label ID="Label13" runat="server" Text="Label"></asp:Label>
         </div>
         <br />
     </div>

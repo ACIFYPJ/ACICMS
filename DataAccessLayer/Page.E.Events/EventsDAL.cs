@@ -54,11 +54,13 @@ namespace DataAccessLayer.Page.E.Events
         {
             using (SqlConnection con = new SqlConnection(constr))
             {
+                //DateTime etc = DateTime.Parse("11/11/2007");
+
                 con.Open();
                 SqlCommand cmd = new SqlCommand("UPDATE aci_event SET EventTitle = @eventTitle, Description=@description, PhotoPath =@photoPath, Location =@location, EventStart=@eventStart, EventEnd=@eventEnd, RegistrationStatus=@regStatus, RegistrationEnd =@regEnd, HomePageFeatured =@homeFeatured, FeaturedOrder=@featureOrder, PhotoAlbumID =@photoalbumid, PageSlug=@pageslug, PublishStatus =@publishStatus, CreateUserID=@createUserID, CreateDate=@createDate WHERE EventID = @eventID", con);
                 cmd.Parameters.AddWithValue("@eventTitle", eventTitle);
                 cmd.Parameters.AddWithValue("@description", description);
-                cmd.Parameters.AddWithValue("@photoPath", photoPath);
+                cmd.Parameters.AddWithValue("@photoPath", "asd");
                 cmd.Parameters.AddWithValue("@location", location);
                 cmd.Parameters.AddWithValue("@eventStart", eventStart);
                 cmd.Parameters.AddWithValue("@eventEnd", eventEnd);
