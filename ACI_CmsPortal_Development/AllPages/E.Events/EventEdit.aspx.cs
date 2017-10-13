@@ -27,15 +27,15 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
                 CKEditor1.Text = DAL.getDescription(EventID);
                 regCheckbox(EventID);
                 rDeadline.Value = DAL.getDeadline(EventID).ToString();
-                featuredH(EventID);
+                FeaturedH(EventID);
                 featureorder.Value = DAL.fOrder(EventID).ToString();
                 pStatus.Text = DAL.pubStatus(EventID);
             }
            
         }
-        public void regCheckbox(int i)
+        public void regCheckbox(int input)
         {
-            if (DAL.getRegStatus(i) == 1)
+            if (DAL.getRegStatus(input) == 1)
             {
                 enableForm.Checked = true;
 
@@ -47,7 +47,7 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
                 
 
         }
-        public void featuredH(int i)
+        public void FeaturedH(int i)
         {
             if (DAL.featured(i) == 1)
             {
@@ -71,8 +71,8 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
                 DateTime sDate = DateTime.ParseExact(startDate.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
                 DateTime eDate = DateTime.ParseExact(endDate.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
 
-                int regStatus = checkbox(enableForm);
-                int homeFeatured = checkbox(feature);
+                int regStatus = CheckBox(enableForm);
+                int homeFeatured = CheckBox(feature);
                 int fOrder = BLL.fo(featureorder.Value);
                 int photoalbumid = 1;
                 string pageslug = "asd";
@@ -88,7 +88,7 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
                 Response.Redirect("EventsAdmin.aspx");
             }
         }
-        public int checkbox(CheckBox c)
+        public static int CheckBox(CheckBox c)
         {
             if (c.Checked)
             {

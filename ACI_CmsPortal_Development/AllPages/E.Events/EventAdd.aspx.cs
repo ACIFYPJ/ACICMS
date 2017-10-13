@@ -37,8 +37,8 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
             DateTime sDate = DateTime.ParseExact(startDate.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
             DateTime eDate = DateTime.ParseExact(endDate.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
             
-            int regStatus = checkbox(CheckBox1);
-            int homeFeatured = checkbox(CheckBox2);
+            int regStatus = CheckBox(CheckBox1);
+            int homeFeatured = CheckBox(CheckBox2);
             int fOrder = BLL.fo(featureorder.Value);
 
             
@@ -59,9 +59,9 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
             
         }
         
-        public int checkbox(CheckBox c)
+        public static int CheckBox(CheckBox check)
         {
-            if (c.Checked)
+            if (check.Checked)
             {
                 return 1;
             }

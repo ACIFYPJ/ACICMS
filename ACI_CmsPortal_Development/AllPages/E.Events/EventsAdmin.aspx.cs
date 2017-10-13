@@ -25,7 +25,7 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
             }
         }
 
-        protected void EventRPT_ItemCommand(object source, RepeaterCommandEventArgs e)
+        protected void EventRpt_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName == "EditEvent")
             {
@@ -38,7 +38,7 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
             Response.Redirect("EventAdd.aspx");
         }
 
-        protected void btnViewApplicants_Click(object sender, EventArgs e)
+        protected void BtnViewApplicants_Click(object sender, EventArgs e)
         {
             Response.Redirect("EventApplicants.aspx");
         }
