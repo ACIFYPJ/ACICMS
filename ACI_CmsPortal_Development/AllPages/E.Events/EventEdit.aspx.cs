@@ -64,6 +64,7 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
         {
             if (TextBoxValidator.IsValid && StartDateValidator.IsValid && DescriptionValidator.IsValid && EndDateValidator.IsValid)
             {
+                int EventID = int.Parse(Request.QueryString["EventID"]);
                 string eventTitle = tbeventTitle.Text;
                 string description = CKEditor1.Text;
                 string photoPath = "";
@@ -79,12 +80,20 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
                 string status = pStatus.Text;
                 int publishStatus = BLL.pubStatus(status);
                 int createUserID = 1;
-                Nullable<DateTime> deadline = null;
-                DateTime createDate = DateTime.Now;
+                Nullable<DateTime> deadline;
+                if (string.IsNullOrWhiteSpace(rDeadline.Value))
+                {
+                    deadline = null;
+                }
+                else
+                    deadline = DateTime.ParseExact(rDeadline.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+               
+
+                 DateTime createDate = DateTime.Now;
                 //DateTime deadline = DateTime.ParseExact(rDeadline.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
                 //int LastModifiedUserID = 1;
                 //DateTime LastModifiedDate = DateTime.Now;
-                DAL.addEvent(eventTitle, description, photoPath, location, sDate, eDate, regStatus, deadline, homeFeatured, fOrder, photoalbumid, pageslug, publishStatus, createUserID, createDate);
+                DAL.editEvent(eventTitle, description, photoPath, location, sDate, eDate, regStatus, deadline, homeFeatured, fOrder, photoalbumid, pageslug, publishStatus, createUserID, createDate, EventID);
                 Response.Redirect("EventsAdmin.aspx");
             }
         }
