@@ -18,8 +18,6 @@
             <h1>Manage Events Applicants</h1>
         </div>
     </div>
-
-
     <div class="panel panel-default">
         <div class="panel-body">
             <asp:Repeater ID="EventRPT" runat="server" OnItemCommand="EventRPT_ItemCommand">
@@ -53,21 +51,20 @@
                             <asp:Label ID="lbName" runat="server" Text='<%# Eval("Name") %>' />
                         </td>
                         <td>
-                            <asp:Label ID="lbNRIC" runat="server" Text='<%# Eval("NRIC") %>' />
-                        </td>
-                        <td>
-                            <asp:Label ID="lbDOB" runat="server" Text='<%# Eval("DateOfBirth") %>' />
-                        </td>
-                        <td>
                             <asp:Label ID="lbHandphone" runat="server" Text='<%# Eval("Handphone") %>' />
                         </td>
                         <td>
                             <asp:Label ID="lbEmail" runat="server" Text='<%# Eval("Email") %>' />
                         </td>
                         <td>
+                            <asp:Label ID="lbNRIC" runat="server" Text='<%# Eval("NRIC") %>' />
+                        </td>
+                        <td>
+                            <asp:Label ID="lbDOB" runat="server" Text='<%# ((DateTime)Eval("DateOfBirth")).ToString("dd-MMMM-yyyy") %>' />
+                        </td>
+                        <td>
                             <asp:Button ID="BtnView" CssClass="btn btn-primary" Width="80px" CommandName="ViewApplicant" CommandArgument='<%# Eval("RegistrationID") %>' runat="server" Text="View" />
-                            
-                              </td>
+                        </td>
                     </tr>
                 </ItemTemplate>
                 <FooterTemplate>
@@ -95,6 +92,9 @@
         </div>
     </div>
 
+
+
+
     <script type="text/javascript">
         function ShowPopup() {
             $("#btnShowPopup").click();
@@ -102,32 +102,44 @@
     </script>
     <button type="button" style="display: none;" id="btnShowPopup" class="btn btn-primary btn-lg"
         data-toggle="modal" data-target="#myModal">
-        Launch demo modal
     </button>
     <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h3 class="modal-title">Applicant Details</h3>
                 </div>
                 <div class="modal-body ">
-                    <h4>Registration ID: <asp:Label ID="lbVRegistrationID" runat="server" Text=""></asp:Label></h4>
-                    <h4>Registration Date: <asp:Label ID="lbVRegistrationDate" runat="server" Text=""></asp:Label></h4>
+                    <h4>Registration ID:
+                        <asp:Label ID="lbVRegistrationID" ForeColor="#0033CC" runat="server" Text=""></asp:Label></h4>
+                    <h4>Registration Date:
+                        <asp:Label ID="lbVRegistrationDate" ForeColor="#0033CC" runat="server" Text=""></asp:Label></h4>
+                    <h4>Event Title:
+                        <asp:Label ID="lbVEventTitle" ForeColor="#0033CC" runat="server" Text=""></asp:Label></h4>
                     <br />
-                     <h4>Name: <asp:Label ID="lbVname" runat="server" Text=""></asp:Label></h4>
-                     <h4>Nationality: <asp:Label ID="lbVnationality" runat="server" Text=""></asp:Label></h4>
-                     <h4>NRIC/FIN: <asp:Label ID="lbVnric" runat="server" Text=""></asp:Label></h4>
-                     <h4>Date Of Birth: <asp:Label ID="lbVdob" runat="server" Text=""></asp:Label></h4>    
-                    <br />                
-                     <h4>Highest Education: <asp:Label ID="lbVhighestedu" runat="server" Text=""></asp:Label></h4>
-                     <h4>Current Employment: <asp:Label ID="lbVcurrentemploy" runat="server" Text=""></asp:Label></h4>
-                     <h4>Referral Source: <asp:Label ID="lbVreferralsource" runat="server" Text=""></asp:Label></h4>
-                     <h4>Sign Up Reason: <asp:Label ID="lbVsignupreason" runat="server" Text=""></asp:Label></h4>
+                    <h4>Name:
+                        <asp:Label ID="lbVname" runat="server" ForeColor="#0033CC" Text=""></asp:Label></h4>
+                    <h4>Nationality:
+                        <asp:Label ID="lbVnationality" runat="server" ForeColor="#0033CC" Text=""></asp:Label></h4>
+                    <h4>NRIC/FIN:
+                        <asp:Label ID="lbVnric" runat="server" ForeColor="#0033CC" Text=""></asp:Label></h4>
+                    <h4>Date Of Birth:
+                        <asp:Label ID="lbVdob" runat="server" ForeColor="#0033CC" Text=""></asp:Label></h4>
                     <br />
-                     <h4>Handphone: <asp:Label ID="lbVhandphone" runat="server" Text=""></asp:Label></h4>
-                     <h4>Email: <asp:Label ID="lbVemail" runat="server" Text=""></asp:Label></h4>
-                                   
+                    <h4>Highest Education:
+                        <asp:Label ID="lbVhighestedu" ForeColor="#0033CC" runat="server" Text=""></asp:Label></h4>
+                    <h4>Current Employment:
+                        <asp:Label ID="lbVcurrentemploy" ForeColor="#0033CC" runat="server" Text=""></asp:Label></h4>
+                    <h4>Referral Source:
+                        <asp:Label ID="lbVreferralsource" ForeColor="#0033CC" runat="server" Text=""></asp:Label></h4>
+                    <h4>Sign Up Reason:
+                        <asp:Label ID="lbVsignupreason" ForeColor="#0033CC" runat="server" Text=""></asp:Label></h4>
+                    <br />
+                    <h4>Handphone:
+                        <asp:Label ID="lbVhandphone" ForeColor="#0033CC" runat="server" Text=""></asp:Label></h4>
+                    <h4>Email:
+                        <asp:Label ID="lbVemail" ForeColor="#0033CC" runat="server" Text=""></asp:Label></h4>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

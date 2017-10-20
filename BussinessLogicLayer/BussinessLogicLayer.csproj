@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Page.E.Events\EventsBLL.cs" />
+    <Compile Include="Page.I.Users\Roles.cs" />
+    <Compile Include="Page.I.Users\UsersBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,7 +58,6 @@
     <Folder Include="Page.F.HomePageSlider\" />
     <Folder Include="Page.G.Recommendation\" />
     <Folder Include="Page.H.Notification\" />
-    <Folder Include="Page.I.Users\" />
     <Folder Include="Page.J.MyAccount\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

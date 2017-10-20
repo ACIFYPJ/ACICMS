@@ -7,135 +7,144 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ACI_CmsPortal_Development.AllPages.E.Events {
+namespace ACI_CmsPortal_Development.AllPages.I.Users {
     
     
-    public partial class EventApplicants {
+    public partial class UsersAdmin {
         
         /// <summary>
-        /// EventRPT control.
+        /// lblheading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater EventRPT;
+        protected global::System.Web.UI.WebControls.Label lblheading;
         
         /// <summary>
-        /// lbVRegistrationID control.
+        /// BtnAddUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbVRegistrationID;
+        protected global::System.Web.UI.WebControls.Button BtnAddUser;
         
         /// <summary>
-        /// lbVRegistrationDate control.
+        /// BtnLockedUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbVRegistrationDate;
+        protected global::System.Web.UI.WebControls.Button BtnLockedUser;
         
         /// <summary>
-        /// lbVEventTitle control.
+        /// BtnAllUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbVEventTitle;
+        protected global::System.Web.UI.WebControls.Button BtnAllUser;
         
         /// <summary>
-        /// lbVname control.
+        /// UsersRPT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbVname;
+        protected global::System.Web.UI.WebControls.Repeater UsersRPT;
         
         /// <summary>
-        /// lbVnationality control.
+        /// lbVCreatedOn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbVnationality;
+        protected global::System.Web.UI.WebControls.Label lbVCreatedOn;
         
         /// <summary>
-        /// lbVnric control.
+        /// lbVCreatedBy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbVnric;
+        protected global::System.Web.UI.WebControls.Label lbVCreatedBy;
         
         /// <summary>
-        /// lbVdob control.
+        /// lbVroles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbVdob;
+        protected global::System.Web.UI.WebControls.Label lbVroles;
         
         /// <summary>
-        /// lbVhighestedu control.
+        /// lbVusername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbVhighestedu;
+        protected global::System.Web.UI.WebControls.Label lbVusername;
         
         /// <summary>
-        /// lbVcurrentemploy control.
+        /// lbVDisplayname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbVcurrentemploy;
+        protected global::System.Web.UI.WebControls.Label lbVDisplayname;
         
         /// <summary>
-        /// lbVreferralsource control.
+        /// lbVEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbVreferralsource;
+        protected global::System.Web.UI.WebControls.Label lbVEmail;
         
         /// <summary>
-        /// lbVsignupreason control.
+        /// lbVFirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbVsignupreason;
+        protected global::System.Web.UI.WebControls.Label lbVFirstName;
         
         /// <summary>
-        /// lbVhandphone control.
+        /// lbVLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbVhandphone;
+        protected global::System.Web.UI.WebControls.Label lbVLastName;
         
         /// <summary>
-        /// lbVemail control.
+        /// lbVGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbVemail;
+        protected global::System.Web.UI.WebControls.Label lbVGender;
+        
+        /// <summary>
+        /// lbVJobTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbVJobTitle;
     }
 }

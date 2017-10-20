@@ -14,6 +14,8 @@ namespace DataAccessLayer.Page.E.Events
     {
 
         string constr = Properties.Settings.Default.DBConnect;
+
+
         public void addEvent(string eventTitle, string description, string photoPath, string location, DateTime eventStart, DateTime eventEnd, int regStatus, Nullable<DateTime> deadline, int homeFeatured, int fOrder, int pID, string ps, int pStatus, int createuserid, DateTime createdate)
         {
             using (SqlConnection con = new SqlConnection(constr))
@@ -36,7 +38,6 @@ namespace DataAccessLayer.Page.E.Events
                 cmd.Parameters.AddWithValue("@publishStatus", pStatus);
                 cmd.Parameters.AddWithValue("@createUserID", createuserid);
                 cmd.Parameters.AddWithValue("@createDate", createdate);
-
                 if (deadline == null)
                 {
                     d.Value = DBNull.Value;
@@ -105,7 +106,7 @@ namespace DataAccessLayer.Page.E.Events
 
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT EventID, HomePageFeatured, EventTitle, Location, EventStart, EventEnd,RegistrationStatus,PublishStatus FROM aci_event"))
+                using (SqlCommand cmd = new SqlCommand("SELECT EventID, HomePageFeatured, EventTitle, Location, EventStart, EventEnd,RegistrationStatus,PublishStatus FROM aci_event ORDER BY EventID DESC"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
@@ -147,8 +148,9 @@ namespace DataAccessLayer.Page.E.Events
 
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM aci_eventregistration WHERE RegistrationID=" + ID))
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM aci_eventregistration WHERE RegistrationID=@RegistrationID"))
                 {
+                    cmd.Parameters.AddWithValue("@RegistrationID", ID);
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
                         cmd.Connection = con;

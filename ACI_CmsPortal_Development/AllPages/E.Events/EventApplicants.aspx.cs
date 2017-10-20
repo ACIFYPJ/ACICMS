@@ -11,25 +11,29 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
 {
     public partial class EventApplicants : System.Web.UI.Page
     {
-        private static int ViewID;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
             {
-                EventsDAL DAL = new EventsDAL();
-                //Populating a DataTable from database.
-                DataTable dt = DAL.GetApplicantsData();
-                EventRPT.DataSource = dt;
-                EventRPT.DataBind();
+                bindtabledata();
             }
+        }
+        private void bindtabledata()
+        {
+            EventsDAL DAL = new EventsDAL();
+            //Populating a DataTable from database.
+            DataTable dt = DAL.GetApplicantsData();
+            EventRPT.DataSource = dt;
+            EventRPT.DataBind();
         }
 
         protected void EventRPT_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            
+
+            int ViewID = int.Parse(e.CommandArgument.ToString());
             if (e.CommandName == "ViewApplicant")
-            {
-                ViewID = int.Parse(e.CommandArgument.ToString());
+            {             
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "ShowPopup();", true);
                 PopulateModal(ViewID);
             }
@@ -43,6 +47,7 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
             {
                 lbVRegistrationID.Text = dtRow["RegistrationID"].ToString();
                 lbVRegistrationDate.Text = dtRow["RegistrationDate"].ToString();
+                lbVEventTitle.Text = dtRow["Title"].ToString();
 
                 lbVname.Text = dtRow["Name"].ToString();
                 lbVnationality.Text = dtRow["Nationality"].ToString();

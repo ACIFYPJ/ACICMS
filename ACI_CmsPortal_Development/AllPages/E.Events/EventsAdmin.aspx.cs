@@ -43,6 +43,10 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
                 DAL.deleteEvent(int.Parse(e.CommandArgument.ToString()));
                 bindtabledata();
             }
+            else if (e.CommandName == "ViewEvent")
+            {
+                Response.Redirect("EventDetails.aspx?EventID=" + e.CommandArgument.ToString());
+            }
         }
 
         protected void BtnEventNew_Click(object sender, EventArgs e)
@@ -55,10 +59,6 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
             Response.Redirect("EventApplicants.aspx");
         }
 
-        protected void BtnRefresh_Click(object sender, EventArgs e)
-        {
-            bindtabledata();
-        }
 
       
     }

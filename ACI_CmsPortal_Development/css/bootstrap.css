@@ -5818,6 +5818,23 @@ button.close {
 .modal-header .close {
   margin-top: -2px;
 }
+.modal-header-success {
+  min-height: 16.42857143px;
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.modal-header-success .close {
+  margin-top: -2px;
+}
+.modal-header-fail {
+  min-height: 16.42857143px;
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.modal-header-fail .close {
+  margin-top: -2px;
+}
+
 .modal-title {
   margin: 0;
   line-height: 1.42857143;

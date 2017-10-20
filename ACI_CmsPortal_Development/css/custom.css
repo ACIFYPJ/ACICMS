@@ -236,6 +236,23 @@ item,
     border-radius: 5px 5px 0px 0px;
 }
 
+
+.modal-header-success {
+    border-style: none;
+    background-color: #40d82f;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.modal-header-fail {
+    border-style: none;
+    background-color: #CC0000;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+}
+
 .carousel {
     border-style: ridge none none none;
     border-width: 1px;
