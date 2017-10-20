@@ -15,7 +15,7 @@
     </script>
     <div class="row">
         <div class="col-sm-12">
-            <h1>Manage Events Applicants</h1>
+            <h1>Manage All Events Applicants</h1>
         </div>
     </div>
     <div class="panel panel-default">

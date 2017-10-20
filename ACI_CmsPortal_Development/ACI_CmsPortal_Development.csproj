@@ -115,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AllMasterPages\MasterAdmin.Master" />
+    <Content Include="AllPages\B.Courses\CoursesAdmin.aspx" />
     <Content Include="AllPages\E.Events\EventAdd.aspx" />
     <Content Include="AllPages\E.Events\EventApplicants.aspx" />
     <Content Include="AllPages\E.Events\EventDetails.aspx" />
@@ -1065,6 +1066,13 @@
     <Compile Include="AllMasterPages\MasterAdmin.Master.designer.cs">
       <DependentUpon>MasterAdmin.Master</DependentUpon>
     </Compile>
+    <Compile Include="AllPages\B.Courses\CoursesAdmin.aspx.cs">
+      <DependentUpon>CoursesAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllPages\B.Courses\CoursesAdmin.aspx.designer.cs">
+      <DependentUpon>CoursesAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AllPages\E.Events\EventAdd.aspx.cs">
       <DependentUpon>EventAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1141,7 +1149,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AllPages\A.Programs\" />
-    <Folder Include="AllPages\B.Courses\" />
     <Folder Include="AllPages\C.Jobs\" />
     <Folder Include="AllPages\D.PhotoGallery\" />
     <Folder Include="AllPages\F.HomePageSlider\" />

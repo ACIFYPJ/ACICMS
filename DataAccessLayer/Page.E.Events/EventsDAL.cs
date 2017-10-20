@@ -122,9 +122,28 @@ namespace DataAccessLayer.Page.E.Events
             }
         }
 
+        public DataTable GetSpecificEventData(int EventID)
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM aci_event WHERE EventID=@EventID"))
+                {
+                    cmd.Parameters.AddWithValue("@EventID", EventID);
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
         public DataTable GetApplicantsData()
         {
-
             using (SqlConnection con = new SqlConnection(constr))
             {
                 using (SqlCommand cmd = new SqlCommand("SELECT RegistrationID, Title,Name,DateOfBirth,Handphone,Email,NRIC FROM aci_eventregistration"))
@@ -142,7 +161,26 @@ namespace DataAccessLayer.Page.E.Events
                 }
             }
         }
-
+        public DataTable GetEventApplicantsData(int EventID)
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT RegistrationID, Title,Name,DateOfBirth,Handphone,Email,NRIC FROM aci_eventregistration WHERE EventID=@EventID"))
+                {
+                    cmd.Parameters.AddWithValue("@EventID", EventID);
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+        }
         public DataTable GetSpecificApplicantsData(int ID)
         {
 
@@ -163,6 +201,18 @@ namespace DataAccessLayer.Page.E.Events
                     }
                 }
             }
+        }
+
+        public int GetApplicantsCount(int EventID)
+        {
+            SqlConnection myConnect = new SqlConnection(constr);
+            myConnect.Open();
+            string Getapplicantcount = "SELECT count(*) from aci_eventregistration where EventID=@EventID";
+            SqlCommand cmd = new SqlCommand(Getapplicantcount, myConnect);
+            cmd.Parameters.AddWithValue("@EventID", EventID);
+            int value = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+            myConnect.Close();
+            return value;
         }
 
         public string getEventTitle(int eventID)

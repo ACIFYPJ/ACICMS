@@ -48,24 +48,19 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
                 lbVRegistrationID.Text = dtRow["RegistrationID"].ToString();
                 lbVRegistrationDate.Text = dtRow["RegistrationDate"].ToString();
                 lbVEventTitle.Text = dtRow["Title"].ToString();
-
                 lbVname.Text = dtRow["Name"].ToString();
                 lbVnationality.Text = dtRow["Nationality"].ToString();
                 lbVnric.Text = dtRow["NRIC"].ToString();
                 //lbVdob.Text = dtRow["DateOfBirth"].ToString();
                 DateTime DOB = DateTime.Parse(dtRow["DateOfBirth"].ToString());
                 lbVdob.Text = DOB.ToString("dd MMMM yyyy");
-
                 lbVhighestedu.Text = dtRow["HighestEducation"].ToString();
                 lbVcurrentemploy.Text = dtRow["CurrentEmployment"].ToString();
                 lbVreferralsource.Text = dtRow["ReferralSource"].ToString();
                 lbVsignupreason.Text = dtRow["SignupReason"].ToString();
-
                 lbVhandphone.Text = dtRow["Handphone"].ToString();
                 lbVemail.Text = dtRow["Email"].ToString();
-
             }
-
         }
 
     }
