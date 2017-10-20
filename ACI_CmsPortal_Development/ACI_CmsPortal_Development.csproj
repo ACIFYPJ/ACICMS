@@ -54,7 +54,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\ckeditor_aspnet_3.6.6.2 (1)\bin\bin\Release\CKEditor.NET.dll</HintPath>
+      <HintPath>..\ckeditor_aspnet_3.6.6.2 (1)\bin\Release\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
@@ -124,6 +124,8 @@
     <Content Include="AllPages\I.Users\AddUser.aspx" />
     <Content Include="AllPages\I.Users\ManageUser.aspx" />
     <Content Include="AllPages\I.Users\UsersAdmin.aspx" />
+    <Content Include="AllPages\K.Secure\Login.aspx" />
+    <Content Include="AllPages\K.Secure\ResetPassword.aspx" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\CHANGES.html" />
     <Content Include="ckeditor\ckeditor.js" />
@@ -1128,6 +1130,20 @@
     </Compile>
     <Compile Include="AllPages\I.Users\UsersAdmin.aspx.designer.cs">
       <DependentUpon>UsersAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllPages\K.Secure\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllPages\K.Secure\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllPages\K.Secure\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllPages\K.Secure\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Global.asax.cs">

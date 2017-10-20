@@ -13,6 +13,7 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
 {
     public partial class EventsAdmin : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
