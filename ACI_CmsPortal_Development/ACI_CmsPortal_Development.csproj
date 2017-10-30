@@ -129,8 +129,8 @@
     <Content Include="AllPages\I.Users\AddUser.aspx" />
     <Content Include="AllPages\I.Users\ManageUser.aspx" />
     <Content Include="AllPages\I.Users\UsersAdmin.aspx" />
-    <Content Include="AllPages\K.Secure\Login.aspx" />
     <Content Include="AllPages\K.Secure\ChangePassword.aspx" />
+    <Content Include="AllPages\K.Secure\Login.aspx" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\CHANGES.html" />
     <Content Include="ckeditor\ckeditor.js" />
@@ -1176,19 +1176,19 @@
     <Compile Include="AllPages\I.Users\UsersAdmin.aspx.designer.cs">
       <DependentUpon>UsersAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AllPages\K.Secure\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AllPages\K.Secure\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
     <Compile Include="AllPages\K.Secure\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AllPages\K.Secure\ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllPages\K.Secure\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllPages\K.Secure\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Global.asax.cs">
