@@ -19,7 +19,8 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
             if (!this.IsPostBack)
             {
                 bindtabledata();
-            }        
+            }
+            
         }
 
         private void bindtabledata()

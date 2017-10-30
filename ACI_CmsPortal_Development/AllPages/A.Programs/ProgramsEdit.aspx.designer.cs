@@ -7,45 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ACI_CmsPortal_Development.AllPages.E.Events {
+namespace ACI_CmsPortal_Development.AllPages.A.Programs {
     
     
-    public partial class EventsAdmin {
+    public partial class ProgramsEdit {
         
         /// <summary>
-        /// BtnEventNew control.
+        /// lblParentProgram control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnEventNew;
+        protected global::System.Web.UI.WebControls.Label lblParentProgram;
         
         /// <summary>
-        /// BtnViewApplicants control.
+        /// ddlParentProgram control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnViewApplicants;
+        protected global::System.Web.UI.WebControls.DropDownList ddlParentProgram;
         
         /// <summary>
-        /// EventRPT control.
+        /// lblProgramName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater EventRPT;
+        protected global::System.Web.UI.WebControls.Label lblProgramName;
         
         /// <summary>
-        /// Label2 control.
+        /// tbProgramName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.TextBox tbProgramName;
     }
 }

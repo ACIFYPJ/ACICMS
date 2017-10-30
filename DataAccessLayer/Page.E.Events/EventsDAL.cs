@@ -51,72 +51,8 @@ namespace DataAccessLayer.Page.E.Events
             }
         }
 
-        public string retrieveSalt(string username)
-        {
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT salt FROM cms_user WHERE username = @username", con))
-                {
-                    con.Open();
-                    cmd.Parameters.AddWithValue("@username", username);
-                    string salt = (string)cmd.ExecuteScalar();
-                    return salt;
-                }
-
-
-            }
-        }
-        public bool checkUser(string username)
-        {
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM cms_user WHERE username like @username", con))
-                {
-                    con.Open();
-                    cmd.Parameters.AddWithValue("@username", username);
-                    int groupCount = (int)cmd.ExecuteScalar();
-                    if (groupCount > 0)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-
-                    }
-                }
-            }
-        }
-        public bool userValidate(string username, string hash, string salt)
-        {
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT Count(*) FROM cms_user WHERE username = @username AND password = @password AND salt = @salt", con))
-                {
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@password", hash);
-                    cmd.Parameters.AddWithValue("@salt", salt);
-                    cmd.Connection = con;
-                    cmd.Connection.Open();
-                    using (SqlDataAdapter sda = new SqlDataAdapter())
-                    {
-                        sda.SelectCommand = cmd;
-                        DataTable dt = new DataTable();
-                        sda.Fill(dt);
-                        if (dt.Rows[0][0].ToString() == "1")
-                        {
-                            return true;
-
-                        }
-                        else
-                        {
-                            return false;
-                        }
-
-                    }
-                }
-            }
-        }
+        
+        
         public void deleteEvent(int eventID)
         {
             using (SqlConnection con = new SqlConnection(constr))
