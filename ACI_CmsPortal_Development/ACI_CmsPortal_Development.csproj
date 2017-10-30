@@ -125,7 +125,6 @@
     <Content Include="AllPages\I.Users\ManageUser.aspx" />
     <Content Include="AllPages\I.Users\UsersAdmin.aspx" />
     <Content Include="AllPages\K.Secure\Login.aspx" />
-    <Content Include="AllPages\K.Secure\ResetPassword.aspx" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\CHANGES.html" />
     <Content Include="ckeditor\ckeditor.js" />
@@ -1137,13 +1136,6 @@
     </Compile>
     <Compile Include="AllPages\K.Secure\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AllPages\K.Secure\ResetPassword.aspx.cs">
-      <DependentUpon>ResetPassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AllPages\K.Secure\ResetPassword.aspx.designer.cs">
-      <DependentUpon>ResetPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Global.asax.cs">
