@@ -120,7 +120,10 @@
     <Content Include="AllPages\A.Programs\ProgramsAdd.aspx" />
     <Content Include="AllPages\A.Programs\ProgramsAdmin.aspx" />
     <Content Include="AllPages\A.Programs\ProgramsEdit.aspx" />
+    <Content Include="AllPages\B.Courses\ClassAdmin.aspx" />
     <Content Include="AllPages\B.Courses\CoursesAdmin.aspx" />
+    <Content Include="AllPages\B.Courses\EditClass.aspx" />
+    <Content Include="AllPages\B.Courses\EditCourses.aspx" />
     <Content Include="AllPages\E.Events\EventAdd.aspx" />
     <Content Include="AllPages\E.Events\EventApplicants.aspx" />
     <Content Include="AllPages\E.Events\EventDetails.aspx" />
@@ -131,6 +134,10 @@
     <Content Include="AllPages\I.Users\UsersAdmin.aspx" />
     <Content Include="AllPages\K.Secure\ChangePassword.aspx" />
     <Content Include="AllPages\K.Secure\Login.aspx" />
+    <Content Include="bootstrap-timepicker\css\bootstrap-timepicker.css" />
+    <Content Include="bootstrap-timepicker\css\bootstrap-timepicker.min.css" />
+    <Content Include="bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="bootstrap-timepicker\js\bootstrap-timepicker.min.js" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\CHANGES.html" />
     <Content Include="ckeditor\ckeditor.js" />
@@ -534,26 +541,26 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="css\TableCss.css" />
-    <Content Include="datetimepicker\.gitignore" />
-    <Content Include="datetimepicker\build\jquery.datetimepicker.full.js" />
-    <Content Include="datetimepicker\build\jquery.datetimepicker.full.min.js" />
-    <Content Include="datetimepicker\build\jquery.datetimepicker.min.css" />
-    <Content Include="datetimepicker\build\jquery.datetimepicker.min.js" />
-    <Content Include="datetimepicker\index.html" />
-    <Content Include="datetimepicker\jquery.datetimepicker.css" />
-    <Content Include="datetimepicker\jquery.datetimepicker.js" />
-    <Content Include="datetimepicker\jquery.datetimepicker.min.js" />
-    <Content Include="datetimepicker\jquery.js" />
-    <Content Include="datetimepicker\MIT-LICENSE.txt" />
-    <Content Include="datetimepicker\screen\1.png" />
-    <Content Include="datetimepicker\screen\2.png" />
-    <Content Include="datetimepicker\screen\3.1.png" />
-    <Content Include="datetimepicker\screen\3.png" />
-    <Content Include="datetimepicker\screen\4.png" />
-    <Content Include="datetimepicker\screen\5.png" />
-    <Content Include="datetimepicker\screen\6.png" />
-    <Content Include="datetimepicker\tests\input_in_container_fixed_to_bottom_of_viewport.html" />
-    <Content Include="datetimepicker\tests\input_in_container_fixed_to_top_of_viewport.html" />
+    <Content Include="datetimepicker\datetimepicker\.gitignore" />
+    <Content Include="datetimepicker\datetimepicker\build\jquery.datetimepicker.full.js" />
+    <Content Include="datetimepicker\datetimepicker\build\jquery.datetimepicker.full.min.js" />
+    <Content Include="datetimepicker\datetimepicker\build\jquery.datetimepicker.min.css" />
+    <Content Include="datetimepicker\datetimepicker\build\jquery.datetimepicker.min.js" />
+    <Content Include="datetimepicker\datetimepicker\index.html" />
+    <Content Include="datetimepicker\datetimepicker\jquery.datetimepicker.css" />
+    <Content Include="datetimepicker\datetimepicker\jquery.datetimepicker.js" />
+    <Content Include="datetimepicker\datetimepicker\jquery.datetimepicker.min.js" />
+    <Content Include="datetimepicker\datetimepicker\jquery.js" />
+    <Content Include="datetimepicker\datetimepicker\MIT-LICENSE.txt" />
+    <Content Include="datetimepicker\datetimepicker\screen\1.png" />
+    <Content Include="datetimepicker\datetimepicker\screen\2.png" />
+    <Content Include="datetimepicker\datetimepicker\screen\3.1.png" />
+    <Content Include="datetimepicker\datetimepicker\screen\3.png" />
+    <Content Include="datetimepicker\datetimepicker\screen\4.png" />
+    <Content Include="datetimepicker\datetimepicker\screen\5.png" />
+    <Content Include="datetimepicker\datetimepicker\screen\6.png" />
+    <Content Include="datetimepicker\datetimepicker\tests\input_in_container_fixed_to_bottom_of_viewport.html" />
+    <Content Include="datetimepicker\datetimepicker\tests\input_in_container_fixed_to_top_of_viewport.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\lato-bold-webfont.eot" />
     <Content Include="fonts\lato-bold-webfont.ttf" />
@@ -595,12 +602,18 @@
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
     <Content Include="ckeditor\.htaccess" />
-    <Content Include="datetimepicker\bower.json" />
-    <Content Include="datetimepicker\datetimepicker.jquery.json" />
-    <Content Include="datetimepicker\doc.tpl" />
-    <Content Include="datetimepicker\package.json" />
-    <Content Include="datetimepicker\README.md" />
-    <Content Include="datetimepicker\yarn.lock" />
+    <Content Include="datetimepicker\datetimepicker\bower.json" />
+    <Content Include="datetimepicker\datetimepicker\datetimepicker.jquery.json" />
+    <Content Include="datetimepicker\datetimepicker\doc.tpl" />
+    <Content Include="datetimepicker\datetimepicker\package.json" />
+    <Content Include="datetimepicker\datetimepicker\README.md" />
+    <Content Include="datetimepicker\datetimepicker\yarn.lock" />
+    <Content Include="bootstrap-timepicker\bower.json" />
+    <Content Include="bootstrap-timepicker\CHANGELOG.md" />
+    <Content Include="bootstrap-timepicker\composer.json" />
+    <Content Include="bootstrap-timepicker\css\timepicker.less" />
+    <Content Include="bootstrap-timepicker\package.json" />
+    <Content Include="bootstrap-timepicker\README.md" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1113,12 +1126,33 @@
     <Compile Include="AllPages\A.Programs\ProgramsEdit.aspx.designer.cs">
       <DependentUpon>ProgramsEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AllPages\B.Courses\ClassAdmin.aspx.cs">
+      <DependentUpon>ClassAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllPages\B.Courses\ClassAdmin.aspx.designer.cs">
+      <DependentUpon>ClassAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AllPages\B.Courses\CoursesAdmin.aspx.cs">
       <DependentUpon>CoursesAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AllPages\B.Courses\CoursesAdmin.aspx.designer.cs">
       <DependentUpon>CoursesAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllPages\B.Courses\EditClass.aspx.cs">
+      <DependentUpon>EditClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllPages\B.Courses\EditClass.aspx.designer.cs">
+      <DependentUpon>EditClass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllPages\B.Courses\EditCourses.aspx.cs">
+      <DependentUpon>EditCourses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllPages\B.Courses\EditCourses.aspx.designer.cs">
+      <DependentUpon>EditCourses.aspx</DependentUpon>
     </Compile>
     <Compile Include="AllPages\E.Events\EventAdd.aspx.cs">
       <DependentUpon>EventAdd.aspx</DependentUpon>

@@ -7,17 +7,10 @@
     <link rel="stylesheet" href="/resources/demos/style.css"/>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>--%>
+    
     <link rel="stylesheet" type="text/css" href="../../datetimepicker/jquery.datetimepicker.css" />
-<script src="../../datetimepicker/jquery.js"></script>
-<script src="../../datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
-   <%-- <script>
-        $(function () {
-            $("#datepicker").datepicker();
-        });
-        $(function () {
-            $("#datepicker2").datepicker();
-        });
-  </script>--%>
+    <script src="../../datetimepicker/jquery.js"></script>
+    <script src="../../datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
     <script>
 
         $(document).ready(function () {

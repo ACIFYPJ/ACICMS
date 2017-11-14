@@ -143,7 +143,7 @@ namespace ACI_CmsPortal_Development.AllPages.I.Users
         }
 
         private void filterrolesDDL()
-        {
+        { 
             UsersBLL userroles = new UsersBLL();
             string[] Roles = userroles.getrolesArray(userID);
             for (int i = 0; i < Roles.Length; i++)
@@ -320,7 +320,6 @@ namespace ACI_CmsPortal_Development.AllPages.I.Users
 
         protected void BtnAddRole_Click(object sender, EventArgs e)
         {
-
             if (ddlroles.SelectedValue != "")
             {
                 //take value from ddl
@@ -350,9 +349,6 @@ namespace ACI_CmsPortal_Development.AllPages.I.Users
 
                 if (result > 0)//success
                 {
-
-                    //reload all the table
-                    //label1.Text = roles;
                     bindrolesDDL();
                     filterrolesDDL();
                     bindRPTUserRole();
@@ -364,8 +360,6 @@ namespace ACI_CmsPortal_Development.AllPages.I.Users
                     lbVmodalfailcontent.Text = "Add Role Failed, please try again " + ex.ToString();
                 }
             }
-
-
         }
 
         protected void UserRolesRPT_ItemCommand(object source, RepeaterCommandEventArgs e)

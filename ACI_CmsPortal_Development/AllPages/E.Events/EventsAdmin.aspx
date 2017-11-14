@@ -74,6 +74,7 @@
                             <asp:Button ID="BtnEdit" CssClass="btn btn-primary" Width="100px" CommandName="EditEvent" CommandArgument='<%# Eval("EventID") %>' runat="server" Text="Edit" />
                             <asp:Button ID="btnDelete" CssClass="btn btn-danger" Width="100px" CommandName="DeleteEvent" CommandArgument='<%# Eval("EventID") %>' runat="server" Text="Delete" />
                             <asp:Button ID="BtnViewEvent" CssClass="btn btn-info" Width="100px" CommandName="ViewEvent" CommandArgument='<%# Eval("EventID") %>' runat="server" Text="Applicants" />             
+                                                         
                              </td>
                     </tr>
                 </ItemTemplate>

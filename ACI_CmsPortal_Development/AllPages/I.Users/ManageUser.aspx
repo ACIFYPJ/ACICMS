@@ -14,10 +14,11 @@
 
         <div class="panel panel-default">
             <div class="panel-heading">
+                  <asp:Button ID="BtnSave" runat="server" Text="Save updates" CssClass="btn btn-success" OnClick="BtnSave_Click" />         
                 <asp:Button ID="Btnlock" CausesValidation="false" runat="server" Text="Lock user" CssClass="btn btn-danger" OnClick="Btnlock_Click" />
-                <asp:Button ID="BtnUnlock" CausesValidation="false" Visible="false" runat="server" Text="Unlock user" CssClass="btn btn-info" OnClick="BtnUnlock_Click" />
-                <asp:Button ID="BtnBack" CausesValidation="false"  CssClass="btn btn-default pull-right"   runat="server" Text="Back" OnClick="BtnBack_Click" />
-            </div>
+                <asp:Button ID="BtnUnlock" CausesValidation="false" Visible="false" runat="server" Text="Unlock user" CssClass="btn btn-warning" OnClick="BtnUnlock_Click" />
+                  <asp:Button ID="BtnBack" CausesValidation="false"  CssClass="btn btn-default pull-right"   runat="server" Text="Back" OnClick="BtnBack_Click" />         
+                 </div>
             <div class="panel-body">
                 <div class="panel panel-default">
                     <div class="panel-body">
@@ -92,10 +93,7 @@
                           <asp:LinkButton ID="LinkBtnUserDisplayMemberList" CausesValidation="False" runat="server"><span aria-hidden="true" class="glyphicon glyphicon-question-sign"></span> </asp:LinkButton>
                                                 </label>
                                             </div>
-                                            <div class="form-group">
-                                                <asp:Button ID="BtnSave" runat="server" Text="Save updates" CssClass="btn btn-success" OnClick="BtnSave_Click" />
-
-                                            </div>
+                                          
                                         </div>
                                     </div>
                                 </div>
@@ -129,9 +127,7 @@
                                                 <label class="control-label" for="job title">Job title:</label>
                                                 <asp:TextBox ID="tbJobtitle" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
-                                            <div class="form-group">
-                                                <asp:Button ID="BtnSave2" runat="server" Text="Save updates" OnClick="BtnSave_Click" CssClass="btn btn-success" />
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -156,6 +152,7 @@
                                                     </div>
                                                     <asp:Repeater ID="UserRolesRPT" runat="server" OnItemCommand="UserRolesRPT_ItemCommand">
                                                         <HeaderTemplate>
+                                                            <div class="panel panel-default">
                                                             <table id="event" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                                                 <thead>
                                                                     <tr>
@@ -180,7 +177,7 @@
                                                             </tbody>
            <tfoot>
            </tfoot>
-                                                            </table>
+                                                            </table></div>
                                                         </FooterTemplate>
                                                     </asp:Repeater>
                                                 </ContentTemplate>

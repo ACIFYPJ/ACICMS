@@ -22,6 +22,15 @@ namespace ACI_CmsPortal_Development.AllPages.I.Users {
         protected global::System.Web.UI.WebControls.Label lblheading;
         
         /// <summary>
+        /// BtnSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnSave;
+        
+        /// <summary>
         /// Btnlock control.
         /// </summary>
         /// <remarks>
@@ -211,15 +220,6 @@ namespace ACI_CmsPortal_Development.AllPages.I.Users {
         protected global::System.Web.UI.WebControls.LinkButton LinkBtnUserDisplayMemberList;
         
         /// <summary>
-        /// BtnSave control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSave;
-        
-        /// <summary>
         /// tbfirstname control.
         /// </summary>
         /// <remarks>
@@ -263,15 +263,6 @@ namespace ACI_CmsPortal_Development.AllPages.I.Users {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbJobtitle;
-        
-        /// <summary>
-        /// BtnSave2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSave2;
         
         /// <summary>
         /// UpdatePanel control.
