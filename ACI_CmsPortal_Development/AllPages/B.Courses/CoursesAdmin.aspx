@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AllMasterPages/MasterAdmin.Master" AutoEventWireup="true" CodeBehind="CoursesAdmin.aspx.cs" Inherits="ACI_CmsPortal_Development.AllPages.B.Courses.CoursesAdmin" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-     <script src="../../js/tablejs.js" type="text/javascript"></script>
+    <script src="../../js/tablejs.js" type="text/javascript"></script>
     <script src="../../js/tablejsbs.js" type="text/javascript"></script>
     <link rel="stylesheet" href="../../css/TableCss.css" />
     <script>
@@ -16,33 +17,40 @@
             <h1>Manage Courses</h1>
         </div>
     </div>
-     <div class="panel panel-default">
+    <div class="panel panel-default">
         <div class="panel-heading">
-            <asp:Button ID="BtnPublished" runat="server" CssClass="btn btn-success" Text="Published" />
-            <asp:Button ID="BtnUnpublished" runat="server" CssClass="btn btn-info" Text="Unpublished" />
-           
+            <div class="form-inline">
+                <div class="form-group">
+                    <asp:DropDownList ID="DDLpublish" CssClass="form-control" Width="29%" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLpublish_SelectedIndexChanged">
+                        <asp:ListItem Text="All" Value="0"></asp:ListItem>
+                        <asp:ListItem Text="Published" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="Draft" Value="2"></asp:ListItem>
+                        <asp:ListItem Text="Archived" Value="3"></asp:ListItem>
+                    </asp:DropDownList>
+
+                    <asp:DropDownList ID="DDLProgramme" CssClass="form-control" Width="69%" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDLProgramme_SelectedIndexChanged"></asp:DropDownList>
+                </div>
+                 <div class="form-group">
+                    <asp:Button ID="BtnShowAllApplicants" runat="server" CssClass="btn btn-info" Text="Show All Applicants" />
+                </div>
+            </div>
+          
+               
+          
         </div>
         <div class="panel-body">
-            <asp:Repeater ID="EventRPT" runat="server" OnItemCommand="EventRpt_ItemCommand">
+            <asp:Repeater ID="CoursesRPT" runat="server" OnItemCommand="CoursesRPT_ItemCommand">
                 <HeaderTemplate>
                     <table id="courses" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th scope="col" style="width: 80px">Featured
+                                <th scope="col" style="width: 200px">Program Type
                                 </th>
-                                <th scope="col" style="width: 200px">Event Title
+                                <th scope="col" style="width: 400px">Course Title
                                 </th>
-                                <th scope="col" style="width: 300px">Location
+                                <th scope="col" style="width: 50px">Version
                                 </th>
-                                <th scope="col" style="width: 200px">Start Date
-                                </th>
-                                <th scope="col" style="width: 200px">End Date
-                                </th>
-                                <th scope="col" style="width: 100px">Registration
-                                </th>
-                                <th scope="col" style="width: 100px">Status
-                                </th>
-                                <th scope="col" style="width: 100px"></th>
+                                <th scope="col" style="width: 350px"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -50,53 +58,34 @@
                 <ItemTemplate>
                     <tr>
                         <td>
-                            <asp:Label ID="lbFeatured" runat="server" Text='<%#((int)Eval("HomePageFeatured") == 1) ? "Yes" : "No" %>' />
+                            <asp:Label ID="lbProgramType" runat="server" Text='<%# Eval("ProgramName") %>'></asp:Label>
                         </td>
                         <td>
-                            <asp:Label ID="lbEventTitle" runat="server" Text='<%# Eval("EventTitle") %>' />
+                            <asp:Label ID="lbCourseTitle" runat="server" Text='<%# Eval("CourseName") %>'></asp:Label>
                         </td>
                         <td>
-                            <asp:Label ID="lbLocation" runat="server" Text='<%# Eval("Location") %>' />
+                            <asp:Label ID="lbCourseVersion" runat="server" Text='<%# Eval("CourseVersion") %>' />
                         </td>
                         <td>
-                            <asp:Label ID="lbStartDate" runat="server" Text='<%# Eval("EventStart") %>' />
+                            <asp:Button ID="BtnView" CssClass="btn btn-info" Width="80px" CommandName="ViewCourse" CommandArgument='<%# Eval("CourseID") %>' runat="server" Text="View" />
+                            <asp:Button ID="BtnEdit" CssClass="btn btn-primary" Width="80px" CommandName="EditCourse" CommandArgument='<%# Eval("CourseID") %>' runat="server" Text="Edit" />
+                            <asp:Button ID="BtnClass" CssClass="btn btn-info" Width="80px" CommandName="Classes" CommandArgument='<%# Eval("CourseID") %>' runat="server" Text="Class" />
+                            <asp:Button ID="BtnApplicants" CssClass="btn btn-info" Width="100px" CommandName="Applicants" CommandArgument='<%# Eval("CourseID") %>' runat="server" Text="Applicants" />
                         </td>
-                        <td>
-                            <asp:Label ID="lbEndDate" runat="server" Text='<%# Eval("EventEnd") %>' />
-                        </td>
-                        <td>
-                            <asp:Label ID="lbRegistration" runat="server" Text='<%#((int)Eval("RegistrationStatus") == 1) ? "Yes" : "No" %>' />
-                        </td>
-                        <td>
-                            <asp:Label ID="Label1" runat="server" Text='<%#((int)Eval("PublishStatus") == 2) ? "Published" : "UnPublished" %>'/>
-                        </td>
-                        <td>
-                            <asp:Button ID="BtnEdit" CssClass="btn btn-primary" Width="100px" CommandName="EditEvent" CommandArgument='<%# Eval("EventID") %>' runat="server" Text="Edit" />
-                            <asp:Button ID="btnDelete" CssClass="btn btn-danger" Width="100px" CommandName="DeleteEvent" CommandArgument='<%# Eval("EventID") %>' runat="server" Text="Delete" />
-                            <asp:Button ID="BtnViewEvent" CssClass="btn btn-info" Width="100px" CommandName="ViewEvent" CommandArgument='<%# Eval("EventID") %>' runat="server" Text="Applicants" />             
-                             </td>
                     </tr>
                 </ItemTemplate>
                 <FooterTemplate>
                     </tbody>
            <tfoot>
-               <tr>
-                   <th scope="col" style="width: 80px">Featured
-                   </th>
-                   <th scope="col" style="width: 200px">Event Title
-                   </th>
-                   <th scope="col" style="width: 300px">Location
-                   </th>
-                   <th scope="col" style="width: 200px">Start Date
-                   </th>
-                   <th scope="col" style="width: 200px">End Date
-                   </th>
-                   <th scope="col" style="width: 100px">Registration
-                   </th>
-                   <th scope="col" style="width: 100px">Status
-                   </th>
-                   <th scope="col" style="width: 100px"></th>
-               </tr>
+              <tr>
+                                <th scope="col" style="width: 200px">Program Type
+                                </th>
+                                <th scope="col" style="width: 400px">Course Title
+                                </th>
+                                <th scope="col" style="width: 50px">Version
+                                </th>
+                                <th scope="col" style="width: 350px"></th>
+                            </tr>
            </tfoot>
                     </table>
                 </FooterTemplate>

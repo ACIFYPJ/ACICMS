@@ -36,11 +36,11 @@
                             <table id="event" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
-                                        <th scope="col" style="width: 200px">Name
+                                        <th scope="col" style="width: 500px">Name
                                         </th>
-                                        <th scope="col" style="width: 200px">Joined Date
+                                        <th scope="col" style="width: 500px">Joined Date
                                         </th>
-                                        <th scope="col" style="width: 100px"></th>
+                                        <th scope="col" style="width: 220px"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -54,8 +54,8 @@
                                     <asp:Label ID="lbName" runat="server" Text='<%# Eval("createdOn") %>' />
                                 </td>
                                 <td>
-                                    <asp:Button ID="BtnView" CssClass="btn btn-info" Width="80px" CommandName="ViewUser" CommandArgument='<%# Eval("userID") %>' runat="server" Text="View" />
-                                    <asp:Button ID="BtnManage" CssClass="btn btn-primary" Width="80px" CommandName="ManageUser" CommandArgument='<%# Eval("userID") %>' runat="server" Text="Manage" />
+                                    <asp:Button ID="BtnView" CssClass="btn btn-info" Width="100px" CommandName="ViewUser" CommandArgument='<%# Eval("userID") %>' runat="server" Text="View" />
+                                    <asp:Button ID="BtnManage" CssClass="btn btn-primary" Width="100px" CommandName="ManageUser" CommandArgument='<%# Eval("userID") %>' runat="server" Text="Manage" />
                                 </td>
                             </tr>
                         </ItemTemplate>

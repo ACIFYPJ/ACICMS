@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Page.B.Courses\CoursesBLL.cs" />
     <Compile Include="Page.E.Events\EventsBLL.cs" />
     <Compile Include="Page.I.Users\Roles.cs" />
     <Compile Include="Page.I.Users\UsersBLL.cs" />
@@ -52,7 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Page.A.Programs\" />
-    <Folder Include="Page.B.Courses\" />
     <Folder Include="Page.C.Jobs\" />
     <Folder Include="Page.D.PhotoGallery\" />
     <Folder Include="Page.F.HomePageSlider\" />

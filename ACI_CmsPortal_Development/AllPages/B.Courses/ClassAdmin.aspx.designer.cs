@@ -10,42 +10,33 @@
 namespace ACI_CmsPortal_Development.AllPages.B.Courses {
     
     
-    public partial class CoursesAdmin {
+    public partial class ClassAdmin {
         
         /// <summary>
-        /// DDLpublish control.
+        /// uppanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLpublish;
+        protected global::System.Web.UI.UpdatePanel uppanel;
         
         /// <summary>
-        /// DDLProgramme control.
+        /// ClassPublishRPT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLProgramme;
+        protected global::System.Web.UI.WebControls.Repeater ClassPublishRPT;
         
         /// <summary>
-        /// BtnShowAllApplicants control.
+        /// ClassUnPublishRPT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnShowAllApplicants;
-        
-        /// <summary>
-        /// CoursesRPT control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater CoursesRPT;
+        protected global::System.Web.UI.WebControls.Repeater ClassUnPublishRPT;
     }
 }

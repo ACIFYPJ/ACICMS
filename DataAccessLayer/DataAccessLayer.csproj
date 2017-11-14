@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Page.A.Programs\ProgramsDAL.cs" />
+    <Compile Include="Page.B.Courses\CoursesDAL.cs" />
     <Compile Include="Page.E.Events\EventsDAL.cs" />
     <Compile Include="Page.I.Users\UsersDAL.cs" />
     <Compile Include="Page.K.Secure\SecureDAL.cs" />
@@ -58,7 +59,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Page.B.Courses\" />
     <Folder Include="Page.C.Jobs\" />
     <Folder Include="Page.D.PhotoGallery\" />
     <Folder Include="Page.F.HomePageSlider\" />
