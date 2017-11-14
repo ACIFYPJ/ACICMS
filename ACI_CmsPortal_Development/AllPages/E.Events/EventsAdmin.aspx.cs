@@ -13,19 +13,27 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
 {
     public partial class EventsAdmin : System.Web.UI.Page
     {
-        
+        EventsDAL DAL = new EventsDAL();
+        int uid;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!this.IsPostBack)
+            //if (!this.IsPostBack)
+            //{
+            //}
+            uid = Int32.Parse(Session["uid"].ToString());
+            if (DAL.checkRole(uid) == true)
             {
                 bindtabledata();
             }
+            else
+                Response.Redirect("~/AllPages/M.Error/ErrorPage.aspx");
+            
             
         }
 
         private void bindtabledata()
         {
-            EventsDAL DAL = new EventsDAL();
+            
             //Populating a DataTable from database.
             DataTable dt = DAL.GetData();
             EventRPT.DataSource = dt;

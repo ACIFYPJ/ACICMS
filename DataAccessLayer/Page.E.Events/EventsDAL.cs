@@ -51,7 +51,28 @@ namespace DataAccessLayer.Page.E.Events
             }
         }
 
-        
+        public bool checkRole(int uid)
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM cms_user WHERE (userID = @uid) AND (roles LIKE '%EventsAdmin%' OR roles LIKE '%Administrator%')", con))
+                {
+                    cmd.Parameters.AddWithValue("@uid", uid);
+                    int i = (int)cmd.ExecuteScalar();
+                    if (i > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+
+                    }
+
+                }
+            }
+        }
         
         public void deleteEvent(int eventID)
         {
@@ -70,10 +91,10 @@ namespace DataAccessLayer.Page.E.Events
                 //DateTime etc = DateTime.Parse("11/11/2007");
 
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE aci_event SET EventTitle = @eventTitle, Description=@description, PhotoPath =@photoPath, Location =@location, EventStart=@eventStart, EventEnd=@eventEnd, RegistrationStatus=@regStatus, RegistrationEnd =@regEnd, HomePageFeatured =@homeFeatured, FeaturedOrder=@featureOrder, PhotoAlbumID =@photoalbumid, PageSlug=@pageslug, PublishStatus =@publishStatus, CreateUserID=@createUserID, CreateDate=@createDate WHERE EventID = @eventID", con);
+                SqlCommand cmd = new SqlCommand("UPDATE aci_event SET EventTitle = @eventTitle, Description=@description, PhotoBin =@photoPath, Location =@location, EventStart=@eventStart, EventEnd=@eventEnd, RegistrationStatus=@regStatus, RegistrationEnd =@regEnd, HomePageFeatured =@homeFeatured, FeaturedOrder=@featureOrder, PhotoAlbumID =@photoalbumid, PageSlug=@pageslug, PublishStatus =@publishStatus, CreateUserID=@createUserID, CreateDate=@createDate WHERE EventID = @eventID", con);
                 cmd.Parameters.AddWithValue("@eventTitle", eventTitle);
                 cmd.Parameters.AddWithValue("@description", description);
-                cmd.Parameters.AddWithValue("@photoPath", "asd");
+                cmd.Parameters.AddWithValue("@photoPath", 0x617364);
                 cmd.Parameters.AddWithValue("@location", location);
                 cmd.Parameters.AddWithValue("@eventStart", eventStart);
                 cmd.Parameters.AddWithValue("@eventEnd", eventEnd);

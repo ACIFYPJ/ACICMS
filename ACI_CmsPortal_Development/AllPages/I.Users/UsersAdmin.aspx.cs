@@ -52,14 +52,14 @@ namespace ACI_CmsPortal_Development.AllPages.I.Users
             DataTable dt = UsersModal.GetSpecificUserData(UserID);
             foreach (DataRow dtRow in dt.Rows)
             {
-                lbVCreatedBy.Text = dtRow["createdBy"].ToString();
-                lbVCreatedOn.Text = dtRow["createdOn"].ToString();
-                lbVDisplayname.Text = dtRow["displayname"].ToString();
-                lbVusername.Text = dtRow["username"].ToString();
-                lbVEmail.Text = dtRow["email"].ToString();
-                lbVroles.Text = dtRow["roles"].ToString();
-                lbVFirstName.Text = dtRow["firstname"].ToString();
-                lbVLastName.Text = dtRow["lastname"].ToString();
+                lbVCreatedBy.Text = HttpUtility.HtmlEncode(dtRow["createdBy"].ToString());
+                lbVCreatedOn.Text = HttpUtility.HtmlEncode(dtRow["createdOn"].ToString());
+                lbVDisplayname.Text = HttpUtility.HtmlEncode(dtRow["displayname"].ToString());
+                lbVusername.Text = HttpUtility.HtmlEncode(dtRow["username"].ToString());
+                lbVEmail.Text = HttpUtility.HtmlEncode(dtRow["email"].ToString());
+                lbVroles.Text = HttpUtility.HtmlEncode(dtRow["roles"].ToString());
+                lbVFirstName.Text = HttpUtility.HtmlEncode(dtRow["firstname"].ToString());
+                lbVLastName.Text = HttpUtility.HtmlEncode(dtRow["lastname"].ToString());
                 string gender = dtRow["gender"].ToString();
                 if (gender == "M")
                 {
@@ -69,8 +69,8 @@ namespace ACI_CmsPortal_Development.AllPages.I.Users
                 {
                     gender = "Female";
                 }
-                lbVGender.Text = gender;
-                lbVJobTitle.Text = dtRow["jobtitle"].ToString();                             
+                lbVGender.Text = HttpUtility.HtmlEncode(gender);
+                lbVJobTitle.Text = HttpUtility.HtmlEncode(dtRow["jobtitle"].ToString());                             
             }
         }
 

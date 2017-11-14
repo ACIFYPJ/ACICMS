@@ -76,8 +76,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNav">
                     <ul class="nav navbar-nav">
-                        <li><a href="Home.aspx">Home</a></li>
-                        <li><a href="Events.aspx">Courses</a></li>
+                        <li><a href="/AllPages/L.Home/Home.aspx">Home</a></li>
+                        <li><a href="/AllPages/B.Courses/CoursesAdmin.aspx">Courses</a></li>
                         <li><a href="/AllPages/E.Events/EventsAdmin.aspx">Event</a></li>
                         <li><a href="AboutUs.aspx">Jobs</a></li>
                         <li><a href="Training.aspx">PhotoGallery</a></li>

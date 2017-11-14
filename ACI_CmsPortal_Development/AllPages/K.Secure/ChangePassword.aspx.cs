@@ -15,9 +15,15 @@ namespace ACI_CmsPortal_Development.AllPages.K.Secure
         string username;
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            uid = int.Parse(Request.QueryString["userID"]);
-            username = Request.QueryString["username"];
+            try
+            {
+                uid = Int32.Parse(Session["uid"].ToString());
+                username = Session["username"].ToString();
+            }
+            catch (NullReferenceException nre)
+            {
+                Response.Redirect("Login.aspx");
+            }
             
         }
 

@@ -112,7 +112,7 @@
                 </div>
                 <div class="modal-body ">
                     <h4>Registration ID:
-                        <asp:Label ID="lbVRegistrationID" ForeColor="#0033CC" runat="server" Text=""></asp:Label></h4>
+                        <asp:Label ID="lbVRegistrationID" ForeColor="#0033CC" runat="server"></asp:Label></h4>
                     <h4>Registration Date:
                         <asp:Label ID="lbVRegistrationDate" ForeColor="#0033CC" runat="server" Text=""></asp:Label></h4>
                     <h4>Event Title:

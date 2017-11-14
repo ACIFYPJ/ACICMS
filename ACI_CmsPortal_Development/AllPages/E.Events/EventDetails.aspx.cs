@@ -73,24 +73,24 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
             DataTable dt = ApplicantModal.GetSpecificApplicantsData(ApplicantID);
             foreach (DataRow dtRow in dt.Rows)
             {
-                lbVRegistrationID.Text = dtRow["RegistrationID"].ToString();
-                lbVRegistrationDate.Text = dtRow["RegistrationDate"].ToString();
-                lbVEventTitle.Text = dtRow["Title"].ToString();
+                lbVRegistrationID.Text = HttpUtility.HtmlEncode(dtRow["RegistrationID"].ToString());
+                lbVRegistrationDate.Text = HttpUtility.HtmlEncode(dtRow["RegistrationDate"].ToString());
+                lbVEventTitle.Text = HttpUtility.HtmlEncode(dtRow["Title"].ToString());
 
-                lbVname.Text = dtRow["Name"].ToString();
-                lbVnationality.Text = dtRow["Nationality"].ToString();
-                lbVnric.Text = dtRow["NRIC"].ToString();
+                lbVname.Text = HttpUtility.HtmlEncode(dtRow["Name"].ToString());
+                lbVnationality.Text = HttpUtility.HtmlEncode(dtRow["Nationality"].ToString());
+                lbVnric.Text = HttpUtility.HtmlEncode(dtRow["NRIC"].ToString());
                 //lbVdob.Text = dtRow["DateOfBirth"].ToString();
                 DateTime DOB = DateTime.Parse(dtRow["DateOfBirth"].ToString());
                 lbVdob.Text = DOB.ToString("dd MMMM yyyy");
 
-                lbVhighestedu.Text = dtRow["HighestEducation"].ToString();
-                lbVcurrentemploy.Text = dtRow["CurrentEmployment"].ToString();
-                lbVreferralsource.Text = dtRow["ReferralSource"].ToString();
-                lbVsignupreason.Text = dtRow["SignupReason"].ToString();
+                lbVhighestedu.Text = HttpUtility.HtmlEncode(dtRow["HighestEducation"].ToString());
+                lbVcurrentemploy.Text = HttpUtility.HtmlEncode(dtRow["CurrentEmployment"].ToString());
+                lbVreferralsource.Text = HttpUtility.HtmlEncode(dtRow["ReferralSource"].ToString());
+                lbVsignupreason.Text = HttpUtility.HtmlEncode(dtRow["SignupReason"].ToString());
 
-                lbVhandphone.Text = dtRow["Handphone"].ToString();
-                lbVemail.Text = dtRow["Email"].ToString();
+                lbVhandphone.Text = HttpUtility.HtmlEncode(dtRow["Handphone"].ToString());
+                lbVemail.Text = HttpUtility.HtmlEncode(dtRow["Email"].ToString());
 
             }
 

@@ -64,6 +64,7 @@ namespace ACI_CmsPortal_Development.ServiceReferenceWCF {
             }
         }
         
+        [field: NonSerialized]
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {

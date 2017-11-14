@@ -4,6 +4,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
         <h1>Manage Programs</h1>
-
+        <asp:ListBox ID="lbShowPrograms" runat="server"></asp:ListBox>
     </div>
 </asp:Content>

@@ -22,8 +22,8 @@ namespace DataAccessLayer.Page.K.Secure
                 {
                     con.Open();
                     cmd.Parameters.AddWithValue("@username", username);
-                    int groupCount = (int)cmd.ExecuteScalar();
-                    if (groupCount > 0)
+                    int i = (int)cmd.ExecuteScalar();
+                    if (i > 0)
                     {
                         return true;
                     }

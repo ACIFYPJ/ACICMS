@@ -27,8 +27,8 @@ namespace DataAccessLayer.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\Users\\L33525\\Desktop\\ACI_WEBPORTA" +
-            "L\\ACI_WEBPORTAL\\ACI_Database\\CmsPortalDB.mdf;Integrated Security=True;Connect Ti" +
-            "meout=30")]
+            "L\\ACI_WEBPORTAL\\WCFService\\WCFService\\App_Data\\CmsPortalDB.mdf;Integrated Securi" +
+            "ty=True;Connect Timeout=30")]
         public string DBConnect {
             get {
                 return ((string)(this["DBConnect"]));
