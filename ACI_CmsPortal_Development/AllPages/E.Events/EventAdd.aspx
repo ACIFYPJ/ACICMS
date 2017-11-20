@@ -77,7 +77,7 @@
             <input type="text" class="datetimepicker" runat="server" id="rDeadline"/>
         </div>
         <br />
-        <div>
+      <%--  <div>
             <asp:Label ID="Label9" runat="server" class="col-sm-2" Text="Link an Event Photo Album"></asp:Label>
             <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
         </div>
@@ -91,7 +91,7 @@
             <asp:Label ID="Label11" runat="server" class="col-sm-2" Text="Feature Order"></asp:Label>
             <input type="number" id="featureorder" min="1" step="1" runat="server"/>
         </div>
-        <br />
+        <br />--%>
 
         <div>
             <asp:Label ID="Label12" runat="server" class="col-sm-2" Text="Publish Status"></asp:Label>

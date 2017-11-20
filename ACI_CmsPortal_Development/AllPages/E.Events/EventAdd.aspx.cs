@@ -38,8 +38,8 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
             DateTime eDate = DateTime.ParseExact(endDate.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
             
             int regStatus = CheckBox(CheckBox1);
-            int homeFeatured = CheckBox(CheckBox2);
-            int fOrder = BLL.fo(featureorder.Value);
+            int homeFeatured = 0;
+            int fOrder = 0;
 
             
             int photoalbumid = 1;

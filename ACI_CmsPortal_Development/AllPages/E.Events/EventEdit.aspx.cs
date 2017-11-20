@@ -27,17 +27,27 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
                 CKEditor1.Text = DAL.getDescription(EventID);
                 regCheckbox(EventID);
                 rDeadline.Value = DAL.getDeadline(EventID).ToString();
-                FeaturedH(EventID);
-                featureorder.Value = DAL.fOrder(EventID).ToString();
-                pStatus.Text = DAL.pubStatus(EventID);
+                //FeaturedH(EventID);
+               // featureorder.Value = DAL.fOrder(EventID).ToString();
+                pStatus.Text = DAL.pubStatus(EventID);               
             }
            
         }
+
+        
         public void regCheckbox(int input)
         {
             if (DAL.getRegStatus(input) == 1)
             {
                 enableForm.Checked = true;
+
+                //if registration is enabled, no more changes can be made
+                tblocation.Enabled = false;
+                CKEditor1.Enabled = false;
+                enableForm.Enabled = false;
+                startDate.Disabled = true;
+                endDate.Disabled = true;
+                rDeadline.Disabled = true;
 
             }
             else
@@ -47,18 +57,7 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
                 
 
         }
-        public void FeaturedH(int i)
-        {
-            if (DAL.featured(i) == 1)
-            {
-                feature.Checked = true;
-
-            }
-            else
-            {
-                feature.Checked = false;
-            }
-        }
+       
 
         protected void Button4_Click(object sender, EventArgs e)
         {
@@ -73,8 +72,8 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
                 DateTime eDate = DateTime.ParseExact(endDate.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
 
                 int regStatus = CheckBox(enableForm);
-                int homeFeatured = CheckBox(feature);
-                int fOrder = BLL.fo(featureorder.Value);
+                int homeFeatured = 0;
+                int fOrder = 0;
                 int photoalbumid = 1;
                 string pageslug = "asd";
                 string status = pStatus.Text;
@@ -107,5 +106,17 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
                 return 0;
 
         }
+        //public void FeaturedH(int i)
+        //{
+        //    if (DAL.featured(i) == 1)
+        //    {
+        //        feature.Checked = true;
+
+        //    }
+        //    else
+        //    {
+        //        feature.Checked = false;
+        //    }
+        //}
     }
 }

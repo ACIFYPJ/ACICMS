@@ -68,9 +68,11 @@
         <div>
             <asp:Label ID="Label8" runat="server" class="col-sm-2" Text="Registration Deadline"></asp:Label>
             <input type="text" class="datetimepicker" runat="server" id="rDeadline"/>
+               <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="rDeadline" runat="server" ForeColor="Red" ErrorMessage="Registration deadline required!"></asp:RequiredFieldValidator>
+    
         </div>
         <br />
-        <div>
+      <%--  <div>
             <asp:Label ID="Label9" runat="server" class="col-sm-2" Text="Link an Event Photo Album"></asp:Label>
             <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
         </div>
@@ -84,7 +86,7 @@
             <asp:Label ID="Label11" runat="server" class="col-sm-2" Text="Feature Order"></asp:Label>
             <input type="number" min="0" max="20" step="1" id ="featureorder" runat="server" />
         </div>
-        <br />
+        <br />--%>
 
         <div>
             <asp:Label ID="Label12" runat="server" class="col-sm-2" Text="Publish Status"></asp:Label>
