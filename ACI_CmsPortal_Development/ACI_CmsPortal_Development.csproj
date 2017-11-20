@@ -134,6 +134,8 @@
     <Content Include="AllPages\I.Users\UsersAdmin.aspx" />
     <Content Include="AllPages\K.Secure\ChangePassword.aspx" />
     <Content Include="AllPages\K.Secure\Login.aspx" />
+    <Content Include="AllPages\L.Home\Home.aspx" />
+    <Content Include="AllPages\M.Error\ErrorPage.aspx" />
     <Content Include="bootstrap-timepicker\css\bootstrap-timepicker.css" />
     <Content Include="bootstrap-timepicker\css\bootstrap-timepicker.min.css" />
     <Content Include="bootstrap-timepicker\js\bootstrap-timepicker.js" />
@@ -1223,6 +1225,20 @@
     </Compile>
     <Compile Include="AllPages\K.Secure\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllPages\L.Home\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllPages\L.Home\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllPages\M.Error\ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllPages\M.Error\ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Global.asax.cs">

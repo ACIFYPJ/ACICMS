@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AllMasterPages/MasterAdmin.Master" AutoEventWireup="true" CodeBehind="EventsAdmin.aspx.cs" Inherits="ACI_CmsPortal_Development.AllPages.E.Events.EventsAdmin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AllMasterPages/MasterAdmin.Master"  AutoEventWireup="true" CodeBehind="EventsAdmin.aspx.cs" Inherits="ACI_CmsPortal_Development.AllPages.E.Events.EventsAdmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -28,36 +28,30 @@
                     <table id="event" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th scope="col" style="width: 80px">Featured
+                               
+                                <th scope="col" style="width: 250px">Event Title
                                 </th>
-                                <th scope="col" style="width: 200px">Event Title
+                               
+                                <th scope="col" style="width: 60px">Start Date
                                 </th>
-                                <th scope="col" style="width: 300px">Location
+                                <th scope="col" style="width: 60px">End Date
                                 </th>
-                                <th scope="col" style="width: 200px">Start Date
+                                 <th scope="col" style="width: 80px">Registration
                                 </th>
-                                <th scope="col" style="width: 200px">End Date
+                                <th scope="col" style="width: 80px">Status
                                 </th>
-                                <th scope="col" style="width: 100px">Registration
-                                </th>
-                                <th scope="col" style="width: 100px">Status
-                                </th>
-                                <th scope="col" style="width: 100px"></th>
+                                <th scope="col" style="width: 250px"></th>
                             </tr>
                         </thead>
                         <tbody>
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr>
-                        <td>
-                            <asp:Label ID="lbFeatured" runat="server" Text='<%#((int)Eval("HomePageFeatured") == 1) ? "Yes" : "No" %>' />
-                        </td>
+                        
                         <td>
                             <asp:Label ID="lbEventTitle" runat="server" Text='<%# Eval("EventTitle") %>' />
                         </td>
-                        <td>
-                            <asp:Label ID="lbLocation" runat="server" Text='<%# Eval("Location") %>' />
-                        </td>
+                        
                         <td>
                             <asp:Label ID="lbStartDate" runat="server" Text='<%# Eval("EventStart") %>' />
                         </td>
@@ -71,9 +65,9 @@
                             <asp:Label ID="Label1" runat="server" Text='<%#((int)Eval("PublishStatus") == 2) ? "Published" : "UnPublished" %>'/>
                         </td>
                         <td>
-                            <asp:Button ID="BtnEdit" CssClass="btn btn-primary" Width="100px" CommandName="EditEvent" CommandArgument='<%# Eval("EventID") %>' runat="server" Text="Edit" />
-                            <asp:Button ID="btnDelete" CssClass="btn btn-danger" Width="100px" CommandName="DeleteEvent" CommandArgument='<%# Eval("EventID") %>' runat="server" Text="Delete" />
-                            <asp:Button ID="BtnViewEvent" CssClass="btn btn-info" Width="100px" CommandName="ViewEvent" CommandArgument='<%# Eval("EventID") %>' runat="server" Text="Applicants" />             
+                            <asp:Button ID="BtnEdit" CssClass="btn btn-primary" Width="95px" CommandName="EditEvent" CommandArgument='<%# Eval("EventID") %>' runat="server" Text="Edit" />
+                            <asp:Button ID="btnView" CssClass="btn btn-info" Width="95px" CommandName="ViewEvent" CommandArgument='<%# Eval("EventID") %>' runat="server" Text="View" />
+                            <asp:Button ID="BtnViewEventApplicant" CssClass="btn btn-info" Width="95px" CommandName="ViewEventApplicant" CommandArgument='<%# Eval("EventID") %>' runat="server" Text="Applicants" />             
                                                          
                              </td>
                     </tr>
@@ -81,23 +75,7 @@
                 <FooterTemplate>
                     </tbody>
            <tfoot>
-               <tr>
-                   <th scope="col" style="width: 80px">Featured
-                   </th>
-                   <th scope="col" style="width: 200px">Event Title
-                   </th>
-                   <th scope="col" style="width: 300px">Location
-                   </th>
-                   <th scope="col" style="width: 200px">Start Date
-                   </th>
-                   <th scope="col" style="width: 200px">End Date
-                   </th>
-                   <th scope="col" style="width: 100px">Registration
-                   </th>
-                   <th scope="col" style="width: 100px">Status
-                   </th>
-                   <th scope="col" style="width: 100px"></th>
-               </tr>
+              
            </tfoot>
                     </table>
                 </FooterTemplate>

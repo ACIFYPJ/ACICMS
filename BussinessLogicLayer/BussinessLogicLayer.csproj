@@ -43,6 +43,7 @@
     <Compile Include="Page.E.Events\EventsBLL.cs" />
     <Compile Include="Page.I.Users\Roles.cs" />
     <Compile Include="Page.I.Users\UsersBLL.cs" />
+    <Compile Include="Page.L.Home\HomeBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
