@@ -56,7 +56,6 @@
         </div>
         <br />
         <div>
-
             <CKEditor:CKEditorControl ID="CKEditor1" BasePath="/ckeditor/" runat="server"></CKEditor:CKEditorControl>
         </div>
         <br />

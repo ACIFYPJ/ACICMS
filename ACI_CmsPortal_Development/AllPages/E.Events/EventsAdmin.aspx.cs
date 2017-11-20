@@ -19,21 +19,16 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
         {
             if (!this.IsPostBack)
             {
-                try
-                {
-                    uid = Int32.Parse(Session["uid"].ToString());
-                    if (DAL.checkRole(uid) == true)
-                    {
-                        bindtabledata();
-                    }
-                    else
-                        Response.Redirect("~/AllPages/M.Error/ErrorPage.aspx");
-                }
-                catch (Exception exc)
-                {
-                    Response.Redirect("~/AllPages/M.Error/ErrorPage.aspx");
-                }
+            
+            uid = Int32.Parse(Session["uid"].ToString());
+            if (DAL.checkRole(uid) == true)
+            {
+                bindtabledata();
             }
+            else
+                Response.Redirect("~/AllPages/M.Error/ErrorPage.aspx");
+            }
+            
         }
 
         private void bindtabledata()
@@ -51,14 +46,15 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
             {
                 Response.Redirect("EventEdit.aspx?EventID="+ e.CommandArgument.ToString());
             }
-            else if(e.CommandName == "DeleteEvent")
+            else if (e.CommandName == "ViewEvent")
             {
                 
-                EventsDAL DAL = new EventsDAL();
-                DAL.deleteEvent(int.Parse(e.CommandArgument.ToString()));
-                bindtabledata();
+                //EventsDAL DAL = new EventsDAL();
+                //DAL.deleteEvent(int.Parse(e.CommandArgument.ToString()));
+                //bindtabledata();
+              
             }
-            else if (e.CommandName == "ViewEvent")
+            else if (e.CommandName == "ViewEventApplicant")
             {
                 Response.Redirect("EventDetails.aspx?EventID=" + e.CommandArgument.ToString());
             }
