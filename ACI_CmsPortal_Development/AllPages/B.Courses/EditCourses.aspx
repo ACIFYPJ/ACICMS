@@ -114,10 +114,10 @@
                                                             <ItemTemplate>
                                                                 <tr>
                                                                     <td>
-                                                                        <asp:Label ID="lbroles" runat="server" Text='<%# Container.DataItem %>' />
+                                                                        <asp:Label ID="lbroles" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Container.DataItem.ToString(),true) %>' />
                                                                     </td>
                                                                     <td>
-                                                                        <asp:Button ID="BtnChangeToElective" Width="200px" CssClass="btn btn-success" CommandName="ChangeToElective" CommandArgument='<%# Container.DataItem %>' runat="server" Text="Set as elective module" />
+                                                                        <asp:Button ID="BtnChangeToElective" Width="200px" CssClass="btn btn-success" CommandName="ChangeToElective" CommandArgument='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Container.DataItem.ToString(),true) %>' runat="server" Text="Set as elective module" />
                                                                     </td>
                                                                 </tr>
                                                             </ItemTemplate>
@@ -144,10 +144,10 @@
                                                             <ItemTemplate>
                                                                 <tr>
                                                                     <td>
-                                                                        <asp:Label ID="lbroles" runat="server" Text='<%# Container.DataItem %>' />
+                                                                        <asp:Label ID="lbroles" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Container.DataItem.ToString(),true) %>' />
                                                                     </td>
                                                                     <td>
-                                                                        <asp:Button ID="BtnChangeToCore" Width="200px" CssClass="btn btn-success" CommandName="ChangeToCore" CommandArgument='<%# Container.DataItem %>' runat="server" Text="Set as core module" />
+                                                                        <asp:Button ID="BtnChangeToCore" Width="200px" CssClass="btn btn-success" CommandName="ChangeToCore" CommandArgument='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Container.DataItem.ToString(),true) %>' runat="server" Text="Set as core module" />
                                                                     </td>
                                                                 </tr>
                                                             </ItemTemplate>

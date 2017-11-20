@@ -42,7 +42,7 @@ namespace ACI_CmsPortal_Development.AllPages.B.Courses
             string description, targetaudience, refundpolicy, entryrequirements, otherinfo, CourseName;
             BLL.getCKdata(CourseID, out PublishStatus, out ProgramID, out description, out targetaudience, out refundpolicy, out entryrequirements, out otherinfo, out CourseName, out Coursefees, out CourseFeesText, out PublishedBefore);
 
-            lblheading.Text = " : " + CourseName;
+            lblheading.Text = HttpUtility.HtmlEncode(" : " + CourseName);
             CKEditorDescription.Text = description;
             CKEditorEntryRequirements.Text = entryrequirements;
             CKEditorOtherInfo.Text = otherinfo;

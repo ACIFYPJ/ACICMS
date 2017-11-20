@@ -41,16 +41,16 @@
                                     <ItemTemplate>
                                         <tr>
                                             <td>
-                                                <asp:Label ID="lbroles" runat="server" Text='<%# Eval("ClassCode") %>' />
+                                                <asp:Label ID="lbroles" runat="server" Text='<%#System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("ClassCode").ToString(),true) %>' />
                                             </td>
                                              <td>
-                                                <asp:Label ID="Label2" runat="server" Text='<%# Eval("StartDate") %>'  />
+                                                <asp:Label ID="Label2" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("StartDate").ToString(),true) %>'  />
                                             </td>
                                              <td>
-                                                <asp:Label ID="Label3" runat="server" Text='<%# Eval("EndDate") %>'  />
+                                                <asp:Label ID="Label3" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("EndDate").ToString(),true)   %>'  />
                                             </td>
                                             <td>
-                                                  <asp:Button ID="BtnEdit" Width="100px" CssClass="btn btn-primary" CommandName="Edit" CommandArgument='<%# Eval("ClassID") %>'  runat="server" Text="Edit" />                                                                                    
+                                                  <asp:Button ID="BtnEdit" Width="100px" CssClass="btn btn-primary" CommandName="Edit" CommandArgument='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("ClassID").ToString(),true) %>'  runat="server" Text="Edit" />                                                                                    
                                               </td>
                                         </tr>
                                     </ItemTemplate>
@@ -82,16 +82,16 @@
                                     <ItemTemplate>
                                         <tr>
                                             <td>
-                                                <asp:Label ID="lbroles" runat="server" Text='<%# Eval("ClassCode") %>' />
+                                                <asp:Label ID="lbroles" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("ClassCode").ToString(),true) %>' />
                                             </td>
                                              <td>
-                                                <asp:Label ID="Label2" runat="server" Text='<%# Eval("StartDate") %>'  />
+                                                <asp:Label ID="Label2" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("StartDate").ToString(),true) %>'  />
                                             </td>
                                              <td>
-                                                <asp:Label ID="Label3" runat="server" Text='<%# Eval("EndDate") %>'  />
+                                                <asp:Label ID="Label3" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("EndDate").ToString(), true) %>'  />
                                             </td>
                                             <td>
-                                                  <asp:Button ID="BtnEdit2" Width="100px" CssClass="btn btn-primary" CommandName="Edit" CommandArgument='<%# Eval("ClassID") %>'  runat="server" Text="Edit" />
+                                                  <asp:Button ID="BtnEdit2" Width="100px" CssClass="btn btn-primary" CommandName="Edit" CommandArgument='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("ClassID").ToString(),true) %>'  runat="server" Text="Edit" />
                                                
                                             </td>
                                         </tr>

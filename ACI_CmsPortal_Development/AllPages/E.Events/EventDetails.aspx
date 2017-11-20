@@ -49,25 +49,25 @@
                         <ItemTemplate>
                             <tr>
                                 <td>
-                                    <asp:Label ID="lbTitle" runat="server" Text='<%# Eval("Title") %>' />
+                                    <asp:Label ID="lbTitle" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("Title").ToString(),true ) %>' />
                                 </td>
                                 <td>
-                                    <asp:Label ID="lbName" runat="server" Text='<%# Eval("Name") %>' />
+                                    <asp:Label ID="lbName" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("Name").ToString(),true) %>' />
                                 </td>
                                 <td>
-                                    <asp:Label ID="lbHandphone" runat="server" Text='<%# Eval("Handphone") %>' />
+                                    <asp:Label ID="lbHandphone" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("Handphone").ToString(),true) %>' />
                                 </td>
                                 <td>
-                                    <asp:Label ID="lbEmail" runat="server" Text='<%# Eval("Email") %>' />
+                                    <asp:Label ID="lbEmail" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("Email").ToString(), true) %>' />
                                 </td>
                                 <td>
-                                    <asp:Label ID="lbNRIC" runat="server" Text='<%# Eval("NRIC") %>' />
+                                    <asp:Label ID="lbNRIC" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("NRIC").ToString(), true) %>' />
                                 </td>
                                 <td>
-                                    <asp:Label ID="lbDOB" runat="server" Text='<%# ((DateTime)Eval("DateOfBirth")).ToString("dd-MMMM-yyyy") %>' />
+                                    <asp:Label ID="lbDOB" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(((DateTime)Eval("DateOfBirth")).ToString("dd-MMMM-yyyy"),true) %>' />
                                 </td>
                                 <td>
-                                    <asp:Button ID="BtnView" CssClass="btn btn-primary" Width="80px" CommandName="ViewApplicant" CommandArgument='<%# Eval("RegistrationID") %>' runat="server" Text="View" />
+                                    <asp:Button ID="BtnView" CssClass="btn btn-primary" Width="80px" CommandName="ViewApplicant" CommandArgument='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("RegistrationID").ToString(), true) %>' runat="server" Text="View" />
                                 </td>
                             </tr>
                         </ItemTemplate>

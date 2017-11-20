@@ -39,7 +39,7 @@ namespace ACI_CmsPortal_Development.AllPages.B.Courses
                 txtstarttime.Text = row["ClassStartTime"].ToString();
                 txtLanguage.Text = row["Language"].ToString();
                 txtremarks.Text = row["Remarks"].ToString();
-                lblHeading.Text = ": " + row["ClassCode"].ToString();
+                lblHeading.Text = HttpUtility.HtmlEncode(": " +row["ClassCode"].ToString());
                registrationstrat= checkifregstarts(regstart);
             }
 

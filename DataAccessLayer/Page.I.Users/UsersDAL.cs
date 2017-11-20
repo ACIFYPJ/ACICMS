@@ -72,7 +72,7 @@ namespace DataAccessLayer.Page.I.Users
                 }
             }
         }
-        public int AddNewUser(string displayname, string username, string email, string password, int changepass, string createdBy, int profileID, out string ex)
+        public int AddNewUser(string displayname, string username, string email, string hash, int changepass, string createdBy, int profileID, string salt, out string ex)
         {
             int result = 0;
             ex = "";
@@ -81,15 +81,16 @@ namespace DataAccessLayer.Page.I.Users
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO cms_user(username,password,displayname,email,changepass,createdBy,createdOn,profileID) VALUES (@username,@password,@displayname,@email,@changepass,@createdBy,@createdOn,@profileID)", con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO cms_user(username,password,displayname,email,changepass,createdBy,createdOn,profileID,salt) VALUES (@username,@password,@displayname,@email,@changepass,@createdBy,@createdOn,@profileID,@salt)", con);
                     cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@password", password);
+                    cmd.Parameters.AddWithValue("@password", hash);
                     cmd.Parameters.AddWithValue("@displayname", displayname);
                     cmd.Parameters.AddWithValue("@email", email);
                     cmd.Parameters.AddWithValue("@changepass", changepass);
                     cmd.Parameters.AddWithValue("@createdBy", createdBy);
                     cmd.Parameters.AddWithValue("@createdOn", DateTime.Now);
                     cmd.Parameters.AddWithValue("@profileID", profileID);
+                    cmd.Parameters.AddWithValue("@salt", salt);
                     result = cmd.ExecuteNonQuery();
                     con.Close();
                 }

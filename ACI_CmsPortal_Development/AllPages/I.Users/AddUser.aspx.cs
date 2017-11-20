@@ -3,6 +3,8 @@ using DataAccessLayer.Page.I.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -11,9 +13,11 @@ namespace ACI_CmsPortal_Development.AllPages.I.Users
 {
     public partial class AddUser : System.Web.UI.Page
     {
+        string createdBy;
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            createdBy = Session["username"].ToString();
         }
         protected void LinkBtnDisplayname_Click(object sender, EventArgs e)
         {
@@ -47,11 +51,15 @@ namespace ACI_CmsPortal_Development.AllPages.I.Users
             string email;
             string password;
             int changepass;
+            string salt = generateSalt();
+            string hash;
 
             displayname = tbdisplayname.Text;
             username = tbusername.Text;
             email = tbemail.Text;
             password = tbpassword.Text;
+            hash = getSHA(password + salt);
+            
 
             if (chkchangepassword.Checked)
             {
@@ -63,15 +71,36 @@ namespace ACI_CmsPortal_Development.AllPages.I.Users
             }
 
             //send values to BLL
-            string createdBy = "GOD first";
-            SendValueToBLL(displayname, username,email,password,changepass,createdBy);
+            SendValueToBLL(displayname, username,email,hash,changepass,createdBy, salt);
+        }
+        public string getSHA(string text)
+        {
+            byte[] b = Encoding.UTF8.GetBytes(text);
+            SHA256Managed hashstring = new SHA256Managed();
+            byte[] hash = hashstring.ComputeHash(b);
+            string String = string.Empty;
+            foreach (byte x in hash)
+            {
+                String += String.Format("{0:x2}", x);
+            }
+            return String;
+        }
+        public string generateSalt()
+        {
+            //Generate a cryptographic random number.
+            RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+            byte[] buff = new byte[10];
+            rng.GetBytes(buff);
+
+            // Return a Base64 string representation of the random number.
+            return Convert.ToBase64String(buff);
         }
 
-        private void SendValueToBLL(string displayname, string username, string email, string password, int changepass, string createdBy)
+        private void SendValueToBLL(string displayname, string username, string email, string hash, int changepass, string createdBy,string salt)
         {
             string ex;
             UsersBLL newuser = new UsersBLL();
-            int result = newuser.CheckUserNameExistBLL(displayname, username, email, password, changepass, createdBy, out ex);
+            int result = newuser.CheckUserNameExistBLL(displayname, username, email, hash, changepass, createdBy,salt, out ex);
            
             if (result == -10101010)
             {
