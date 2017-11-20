@@ -16,16 +16,16 @@ namespace DataAccessLayer.Page.E.Events
         string constr = Properties.Settings.Default.DBConnect;
 
 
-        public void addEvent(string eventTitle, string description, string photoPath, string location, DateTime eventStart, DateTime eventEnd, int regStatus, Nullable<DateTime> deadline, int homeFeatured, int fOrder, int pID, string ps, int pStatus, int createuserid, DateTime createdate)
+        public void addEvent(string eventTitle, string description, byte[] photoBin, string location, DateTime eventStart, DateTime eventEnd, int regStatus, Nullable<DateTime> deadline, int homeFeatured, int fOrder, int pID, string ps, int pStatus, int createuserid, DateTime createdate)
         {
             using (SqlConnection con = new SqlConnection(constr))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO aci_event(EventTitle, Description, PhotoPath, Location, EventStart, EventEnd, RegistrationStatus, RegistrationEnd, HomePageFeatured, FeaturedOrder, PhotoAlbumID, PageSlug, PublishStatus, CreateUserID, CreateDate) VALUES (@eventTitle, @description, @photoPath, @location, @eventStart, @eventEnd, @regStatus, @regEnd, @homeFeatured, @featureOrder, @photoalbumid, @pageslug, @publishStatus, @createUserID, @createDate)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO aci_event(EventTitle, Description, PhotoBin, Location, EventStart, EventEnd, RegistrationStatus, RegistrationEnd, HomePageFeatured, FeaturedOrder, PhotoAlbumID, PageSlug, PublishStatus, CreateUserID, CreateDate) VALUES (@eventTitle, @description, @photoBin, @location, @eventStart, @eventEnd, @regStatus, @regEnd, @homeFeatured, @featureOrder, @photoalbumid, @pageslug, @publishStatus, @createUserID, @createDate)", con);
 
                 cmd.Parameters.AddWithValue("@eventTitle", eventTitle);
                 cmd.Parameters.AddWithValue("@description", description);
-                cmd.Parameters.AddWithValue("@photoPath", photoPath);
+                cmd.Parameters.AddWithValue("@photoBin", photoBin);
                 cmd.Parameters.AddWithValue("@location", location);
                 cmd.Parameters.AddWithValue("@eventStart", eventStart);
                 cmd.Parameters.AddWithValue("@eventEnd", eventEnd);
@@ -84,17 +84,17 @@ namespace DataAccessLayer.Page.E.Events
                 cmd.ExecuteNonQuery();
             }
         }
-        public void editEvent(string eventTitle, string description, string photoPath, string location, DateTime eventStart, DateTime eventEnd, int regStatus, Nullable<DateTime> deadline, int homeFeatured, int fOrder, int pID, string ps, int pStatus, int createuserid, DateTime createdate, int eventID)
+        public void editEvent(string eventTitle, string description, byte[] photoBin, string location, DateTime eventStart, DateTime eventEnd, int regStatus, Nullable<DateTime> deadline, int homeFeatured, int fOrder, int pID, string ps, int pStatus, int createuserid, DateTime createdate, int eventID)
         {
             using (SqlConnection con = new SqlConnection(constr))
             {
                 //DateTime etc = DateTime.Parse("11/11/2007");
 
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE aci_event SET EventTitle = @eventTitle, Description=@description, PhotoBin =@photoPath, Location =@location, EventStart=@eventStart, EventEnd=@eventEnd, RegistrationStatus=@regStatus, RegistrationEnd =@regEnd, HomePageFeatured =@homeFeatured, FeaturedOrder=@featureOrder, PhotoAlbumID =@photoalbumid, PageSlug=@pageslug, PublishStatus =@publishStatus, CreateUserID=@createUserID, CreateDate=@createDate WHERE EventID = @eventID", con);
+                SqlCommand cmd = new SqlCommand("UPDATE aci_event SET EventTitle = @eventTitle, Description=@description, PhotoBin =@photoBin, Location =@location, EventStart=@eventStart, EventEnd=@eventEnd, RegistrationStatus=@regStatus, RegistrationEnd =@regEnd, HomePageFeatured =@homeFeatured, FeaturedOrder=@featureOrder, PhotoAlbumID =@photoalbumid, PageSlug=@pageslug, PublishStatus =@publishStatus, CreateUserID=@createUserID, CreateDate=@createDate WHERE EventID = @eventID", con);
                 cmd.Parameters.AddWithValue("@eventTitle", eventTitle);
                 cmd.Parameters.AddWithValue("@description", description);
-                cmd.Parameters.AddWithValue("@photoPath", 0x617364);
+                cmd.Parameters.AddWithValue("@photoBin", photoBin);
                 cmd.Parameters.AddWithValue("@location", location);
                 cmd.Parameters.AddWithValue("@eventStart", eventStart);
                 cmd.Parameters.AddWithValue("@eventEnd", eventEnd);

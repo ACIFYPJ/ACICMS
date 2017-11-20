@@ -17,18 +17,23 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
         int uid;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!this.IsPostBack)
-            //{
-            //}
-            uid = Int32.Parse(Session["uid"].ToString());
-            if (DAL.checkRole(uid) == true)
+            if (!this.IsPostBack)
             {
-                bindtabledata();
+                try
+                {
+                    uid = Int32.Parse(Session["uid"].ToString());
+                    if (DAL.checkRole(uid) == true)
+                    {
+                        bindtabledata();
+                    }
+                    else
+                        Response.Redirect("~/AllPages/M.Error/ErrorPage.aspx");
+                }
+                catch (Exception exc)
+                {
+                    Response.Redirect("~/AllPages/M.Error/ErrorPage.aspx");
+                }
             }
-            else
-                Response.Redirect("~/AllPages/M.Error/ErrorPage.aspx");
-            
-            
         }
 
         private void bindtabledata()

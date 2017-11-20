@@ -22,6 +22,10 @@ namespace BussinessLogicLayer.Page.B.Courses
         {
             DAL.updateClassDetails(ClassID, EndTime, StartTime, Language, Remarks);
         }
+        public bool checkRole(int uid)
+        {
+            return DAL.checkRole(uid);
+        }
 
         public string[] getCoreArray(int CourseID)
         {

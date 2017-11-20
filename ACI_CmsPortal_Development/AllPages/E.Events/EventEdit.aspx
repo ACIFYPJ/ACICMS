@@ -47,7 +47,7 @@
         <br />
         <div>
             <asp:Label ID="Label5" runat="server" class="col-sm-2" Text="Featured Photo"></asp:Label>
-            <input type="file" id="myFile" />
+            <asp:FileUpload ID="imgUpload" runat="server" />
         </div>
         <br />
         <div>

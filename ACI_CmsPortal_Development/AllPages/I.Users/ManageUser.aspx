@@ -166,10 +166,10 @@
                                                         <ItemTemplate>
                                                             <tr>
                                                                 <td>
-                                                                    <asp:Label ID="lbroles" runat="server" Text='<%# Container.DataItem %>' />
+                                                                    <asp:Label ID="lbroles" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Container.DataItem.ToString(),true) %>' />
                                                                 </td>
                                                                 <td>
-                                                                    <asp:Button ID="BtnDelete" CssClass="btn btn-danger" CommandName="DeleteRole" CommandArgument='<%# Container.DataItem %>' runat="server" Text="Delete role" />
+                                                                    <asp:Button ID="BtnDelete" CssClass="btn btn-danger" CommandName="DeleteRole" CommandArgument='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Container.DataItem.ToString(),true) %>' runat="server" Text="Delete role" />
                                                                 </td>
                                                             </tr>
                                                         </ItemTemplate>

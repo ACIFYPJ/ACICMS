@@ -37,6 +37,28 @@ namespace DataAccessLayer.Page.B.Courses
                 con.Close();
             }
         }
+        public bool checkRole(int uid)
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM cms_user WHERE (userID = @uid) AND (roles LIKE '%CoursesAdmin%' OR roles LIKE '%Administrator%')", con))
+                {
+                    cmd.Parameters.AddWithValue("@uid", uid);
+                    int i = (int)cmd.ExecuteScalar();
+                    if (i > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+
+                    }
+
+                }
+            }
+        }
      
         public DataTable getClassDetails(int ClassID)
         {

@@ -48,14 +48,14 @@
                         <ItemTemplate>
                             <tr>
                                 <td>
-                                    <asp:Label ID="lbTitle" runat="server" Text='<%# Eval("displayname") %>' />
+                                    <asp:Label ID="lbTitle" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("displayname").ToString(),true) %>' />
                                 </td>
                                 <td>
-                                    <asp:Label ID="lbName" runat="server" Text='<%# Eval("createdOn") %>' />
+                                    <asp:Label ID="lbName" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("createdOn").ToString(),true) %>' />
                                 </td>
                                 <td>
-                                    <asp:Button ID="BtnView" CssClass="btn btn-info" Width="100px" CommandName="ViewUser" CommandArgument='<%# Eval("userID") %>' runat="server" Text="View" />
-                                    <asp:Button ID="BtnManage" CssClass="btn btn-primary" Width="100px" CommandName="ManageUser" CommandArgument='<%# Eval("userID") %>' runat="server" Text="Manage" />
+                                    <asp:Button ID="BtnView" CssClass="btn btn-info" Width="100px" CommandName="ViewUser" CommandArgument='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("userID").ToString(),true) %>' runat="server" Text="View" />
+                                    <asp:Button ID="BtnManage" CssClass="btn btn-primary" Width="100px" CommandName="ManageUser" CommandArgument='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("userID").ToString(),true) %>' runat="server" Text="Manage" />
                                 </td>
                             </tr>
                         </ItemTemplate>

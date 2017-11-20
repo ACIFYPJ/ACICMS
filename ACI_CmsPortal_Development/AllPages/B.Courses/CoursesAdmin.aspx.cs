@@ -13,15 +13,25 @@ namespace ACI_CmsPortal_Development.AllPages.B.Courses
     {
 
         CoursesBLL BLL = new CoursesBLL();
+        int uid;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
+            {
+            uid = Int32.Parse(Session["uid"].ToString());
+            if (BLL.checkRole(uid) == true)
             {
                 //load dropdown
                 loaddropdown();
                 //load table
                 loadtabledata();
-              //  Label1.Text = DDLpublish.SelectedValue.ToString() + "  programID = " + DDLProgramme.SelectedValue.ToString();
+                //  Label1.Text = DDLpublish.SelectedValue.ToString() + "  programID = " + DDLProgramme.SelectedValue.ToString();
+            
+            }
+            else
+                Response.Redirect("~/AllPages/M.Error/ErrorPage.aspx");
+            
+            
             }
         }
 

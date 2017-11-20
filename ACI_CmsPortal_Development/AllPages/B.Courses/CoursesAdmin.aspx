@@ -58,19 +58,19 @@
                 <ItemTemplate>
                     <tr>
                         <td>
-                            <asp:Label ID="lbProgramType" runat="server" Text='<%# Eval("ProgramName") %>'></asp:Label>
+                            <asp:Label ID="lbProgramType" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("ProgramName").ToString(),true) %>'></asp:Label>
                         </td>
                         <td>
-                            <asp:Label ID="lbCourseTitle" runat="server" Text='<%# Eval("CourseName") %>'></asp:Label>
+                            <asp:Label ID="lbCourseTitle" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("CourseName").ToString(), true) %>'></asp:Label>
                         </td>
                         <td>
-                            <asp:Label ID="lbCourseVersion" runat="server" Text='<%# Eval("CourseVersion") %>' />
+                            <asp:Label ID="lbCourseVersion" runat="server" Text='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("CourseVersion").ToString(), true) %>' />
                         </td>
                         <td>
-                            <asp:Button ID="BtnView" CssClass="btn btn-info" Width="80px" CommandName="ViewCourse" CommandArgument='<%# Eval("CourseID") %>' runat="server" Text="View" />
-                            <asp:Button ID="BtnEdit" CssClass="btn btn-primary" Width="80px" CommandName="EditCourse" CommandArgument='<%# Eval("CourseID") %>' runat="server" Text="Edit" />
-                            <asp:Button ID="BtnClass" CssClass="btn btn-info" Width="80px" CommandName="Classes" CommandArgument='<%# Eval("CourseID") %>' runat="server" Text="Class" />
-                            <asp:Button ID="BtnApplicants" CssClass="btn btn-info" Width="100px" CommandName="Applicants" CommandArgument='<%# Eval("CourseID") %>' runat="server" Text="Applicants" />
+                            <asp:Button ID="BtnView" CssClass="btn btn-info" Width="80px" CommandName="ViewCourse" CommandArgument='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("CourseID").ToString(),true) %>' runat="server" Text="View" />
+                            <asp:Button ID="BtnEdit" CssClass="btn btn-primary" Width="80px" CommandName="EditCourse" CommandArgument='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("CourseID").ToString(), true) %>' runat="server" Text="Edit" />
+                            <asp:Button ID="BtnClass" CssClass="btn btn-info" Width="80px" CommandName="Classes" CommandArgument='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("CourseID").ToString(), true) %>' runat="server" Text="Class" />
+                            <asp:Button ID="BtnApplicants" CssClass="btn btn-info" Width="100px" CommandName="Applicants" CommandArgument='<%# System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(Eval("CourseID").ToString(), true) %>' runat="server" Text="Applicants" />
                         </td>
                     </tr>
                 </ItemTemplate>

@@ -67,7 +67,19 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
                 int EventID = int.Parse(Request.QueryString["EventID"]);
                 string eventTitle = tbeventTitle.Text;
                 string description = CKEditor1.Text;
-                string photoPath = "";
+                FileUpload img = (FileUpload)imgUpload;
+                Byte[] imgByte = null;
+                if (img.HasFile && img.PostedFile != null)
+                {
+                    //Create a PostedFile
+                    HttpPostedFile File = imgUpload.PostedFile;
+                    //Create byte Array with file length
+                    imgByte = new Byte[File.ContentLength];
+                    //Force control to load data in array
+                    File.InputStream.Read(imgByte, 0, File.ContentLength);
+                }
+
+                byte[] photoBin = imgByte;
                 string location = tblocation.Text;
                 DateTime sDate = DateTime.ParseExact(startDate.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
                 DateTime eDate = DateTime.ParseExact(endDate.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
@@ -93,7 +105,7 @@ namespace ACI_CmsPortal_Development.AllPages.E.Events
                 //DateTime deadline = DateTime.ParseExact(rDeadline.Value, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
                 //int LastModifiedUserID = 1;
                 //DateTime LastModifiedDate = DateTime.Now;
-                DAL.editEvent(eventTitle, description, photoPath, location, sDate, eDate, regStatus, deadline, homeFeatured, fOrder, photoalbumid, pageslug, publishStatus, createUserID, createDate, EventID);
+                DAL.editEvent(eventTitle, description, photoBin, location, sDate, eDate, regStatus, deadline, homeFeatured, fOrder, photoalbumid, pageslug, publishStatus, createUserID, createDate, EventID);
                 Response.Redirect("EventsAdmin.aspx");
             }
         }

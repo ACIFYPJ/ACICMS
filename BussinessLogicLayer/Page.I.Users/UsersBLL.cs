@@ -10,11 +10,11 @@ namespace BussinessLogicLayer.Page.I.Users
     public class UsersBLL
     {
 
-        private int AddNewUser(string displayname, string username, string email, string password, int changepass,string createdBy,int profileID ,out string ex)
+        private int AddNewUser(string displayname, string username, string email, string password, int changepass,string createdBy,int profileID ,string salt, out string ex)
         {
             int result;
             UsersDAL addnewuser = new UsersDAL();
-            result = addnewuser.AddNewUser(displayname, username, email, password, changepass,createdBy,profileID, out ex);
+            result = addnewuser.AddNewUser(displayname, username, email, password, changepass,createdBy,profileID,salt, out ex);
             return result;
         }
 
@@ -26,7 +26,7 @@ namespace BussinessLogicLayer.Page.I.Users
             return result;
         }
 
-        public int CheckUserNameExistBLL(string displayname, string username, string email, string password, int changepass,string createdBy, out string ex)
+        public int CheckUserNameExistBLL(string displayname, string username, string email, string hash, int changepass,string createdBy,string salt, out string ex)
         {
             UsersDAL checkuserexist = new UsersDAL();
             int UserExistResult = checkuserexist.CheckUserNameExistDAL(username);
@@ -45,7 +45,7 @@ namespace BussinessLogicLayer.Page.I.Users
                 if (CreateUserprofile > 0)//profile created
                 {              
                     //finally add new user
-                    int result = AddNewUser(displayname, username, email, password, changepass, createdBy, profileID, out ex);
+                    int result = AddNewUser(displayname, username, email, hash, changepass, createdBy, profileID,salt, out ex);
                     if (result > 0)
                     {
                         return result;
@@ -65,13 +65,13 @@ namespace BussinessLogicLayer.Page.I.Users
         }
 
 
-        public int updateuserinfo(string currentusername, string username, string password, string displayname, string email, int changepass, int displaymemberlist, string firstname, string lastname, Nullable<DateTime> DOB, char gender, string jobtitle, int userID, out string ex)
+        public int updateuserinfo(string currentusername, string username, string hash, string displayname, string email, int changepass, int displaymemberlist, string firstname, string lastname, Nullable<DateTime> DOB, char gender, string jobtitle, int userID, out string ex)
         {
             UsersDAL updateinfo = new UsersDAL();           
             ex = "";        
             if (currentusername == username)
             {
-                int result = updateinfo.UpdateUserInfo(username, password, displayname, email, changepass, displaymemberlist, firstname, lastname, DOB, gender, jobtitle, userID, out ex);
+                int result = updateinfo.UpdateUserInfo(username, hash, displayname, email, changepass, displaymemberlist, firstname, lastname, DOB, gender, jobtitle, userID, out ex);
                 return result;              
             }
             else
@@ -84,7 +84,7 @@ namespace BussinessLogicLayer.Page.I.Users
                 }
                 else
                 {
-                    int result = updateinfo.UpdateUserInfo(username, password, displayname, email, changepass, displaymemberlist, firstname, lastname, DOB, gender, jobtitle, userID, out ex);
+                    int result = updateinfo.UpdateUserInfo(username, hash, displayname, email, changepass, displaymemberlist, firstname, lastname, DOB, gender, jobtitle, userID, out ex);
                     return result;
                 }             
             }
